@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MaxFront | Bootstrap Front-End</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Ruda:400,900,700' rel='stylesheet' type='text/css'>  
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <!-- Bootstrap -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <!-- Template Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/colors/brown.css">    
+    <!-- Layer Slider -->
+    <link rel="stylesheet" href="layerslider/css/layerslider.css" type="text/css">
+
+  
+    <!-- Support for HTML5 -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Enable media queries on older browsers -->
+    <!--[if lt IE 9]>
+        <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+  
+    <script src="js/modernizr.js"></script>
+
+    <!--STYLES-->
+    
+    <!--STYLES END-->
+  </head>
+
+  <body ng-app="treateaseApp">
+    <%- body %>
+
+
+
+    <!--
+        Client-side Templates
+        ========================
+
+    		HTML templates are important prerequisites of modern, rich client applications.
+        To work their magic, frameworks like Backbone, Angular, Ember, and Knockout require
+        that you load these templates client-side.
+
+        By default, your Gruntfile is configured to automatically load and precompile
+        client-side JST templates in your `assets/linker/templates` folder, then
+        include them here automatically.
+        
+        To customize this behavior to fit your needs, just edit your Gruntfile.
+        For example, here are a few things you could do:
+
+            + Import templates from other directories
+            + Use a different template engine (handlebars, jade, dust, etc.)
+            + Internationalize your templates using a server-side stringfile
+              before they're served.
+    -->
+
+    <!--TEMPLATES-->
+    
+    <!--TEMPLATES END-->
+
+
+    <!--
+
+      Client-side Javascript
+      ========================
+
+      You can always bring in JS files manually with `script` tags, or asynchronously
+      on the client using a solution like AMD (RequireJS).  Or, if you like, you can 
+      take advantage of Sails' boilerplate asset management.
+
+      By default, filesin your `assets/linker/js` folder are included here
+      automatically.  Both JavaScript (.js) and CoffeeScript (.coffee) are supported.
+      In production, your scripts will be minified and concatenated into a single file.
+      
+      To customize any part of the built-in behavior, just edit your Gruntfile.
+      For example, here are a few things you could do:
+          
+          + Change the order of your scripts
+          + Import scripts from other directories
+          + Use a different preprocessor, like TypeScript
+
+    -->
+
+    <!--SCRIPTS-->
+    <script src="/linker/js/socket.io.js"></script>
+    <script src="/linker/js/sails.io.js"></script>
+    <script src="/linker/js/app.js"></script>
+    <script src="/js/components/lodash/lodash.custom.js"></script>
+    <script src="/js/components/lodash/lodash.js"></script>
+    <script src="/js/components/angular/angular.js"></script>
+    <script src="/js/components/angular/angular-cookies.js"></script>
+    <script src="/js/components/angular/angular-resource.js"></script>
+    <script src="/js/components/angular/angular-sanitize.js"></script>
+    <script src="/js/components/angular/angular-route.js"></script>
+    <script src="/js/components/custom_angular_bootstrap.js"></script>
+    <script src="/js/components/markerclusterer.js"></script>
+    <script src="/js/components/oms.min.js"></script>
+    <script src="/js/bower_components/angular-ui-utils/modules/showhide/showhide.js"></script>
+    <script src="/js/bower_components/angular-ui-utils/modules/event/event.js"></script>
+    <script src="/js/bower_components/angular-ui-utils/modules/keypress/keypress.js"></script>
+    <script src="/js/bower_components/angular-ui-map/ui-map.js"></script>
+    <script src="/js/bower_components/angularytics/dist/angularytics.min.js"></script>
+    <script src="/js/bower_components/angular-socket-io/socket.js"></script>
+    <script src="/linker/js/app/app.js"></script>
+    <script src="/linker/js/app/controllers/corp/aboutUs.js"></script>
+    <script src="/linker/js/app/controllers/corp/browserCheck.js"></script>
+    <script src="/linker/js/app/controllers/corp/emailListSignup.js"></script>
+    <script src="/linker/js/app/controllers/corp/footer.js"></script>
+    <script src="/linker/js/app/controllers/corp/header.js"></script>
+    <script src="/linker/js/app/controllers/corp/headline.js"></script>
+    <script src="/linker/js/app/controllers/corp/index.js"></script>
+    <script src="/linker/js/app/controllers/corp/inspiration.js"></script>
+    <script src="/linker/js/app/controllers/corp/investors.js"></script>
+    <script src="/linker/js/app/controllers/corp/login.js"></script>
+    <script src="/linker/js/app/controllers/corp/main.js"></script>
+    <script src="/linker/js/app/controllers/corp/map.js"></script>
+    <script src="/linker/js/app/controllers/corp/meetingDetailSmall.js"></script>
+    <script src="/linker/js/app/controllers/corp/meetingFilters.js"></script>
+    <script src="/linker/js/app/controllers/corp/meetingList.js"></script>
+    <script src="/linker/js/app/controllers/corp/meetingSearch.js"></script>
+    <script src="/linker/js/app/controllers/corp/meetingentry.js"></script>
+    <script src="/linker/js/app/controllers/corp/meetings.js"></script>
+    <script src="/linker/js/app/controllers/corp/mission.js"></script>
+    <script src="/linker/js/app/controllers/corp/press.js"></script>
+    <script src="/linker/js/app/controllers/corp/register.js"></script>
+    <script src="/linker/js/app/controllers/corp/signupFlow.js"></script>
+    <script src="/linker/js/app/controllers/corp/thankYou.js"></script>
+    <script src="/linker/js/app/controllers/corp/tumblr.js"></script>
+    <script src="/linker/js/app/controllers/corp/tumblrPostDetail.js"></script>
+    <script src="/linker/js/app/controllers/debug.js"></script>
+    <script src="/linker/js/app/controllers/filter.js"></script>
+    <script src="/linker/js/app/controllers/login.js"></script>
+    <script src="/linker/js/app/controllers/map.js"></script>
+    <script src="/linker/js/app/controllers/meetingDetail.js"></script>
+    <script src="/linker/js/app/controllers/messages.js"></script>
+    <script src="/linker/js/app/controllers/pagedList.js"></script>
+    <script src="/linker/js/app/controllers/profile.js"></script>
+    <script src="/linker/js/app/controllers/register.js"></script>
+    <script src="/linker/js/app/controllers/talks.js"></script>
+    <script src="/linker/js/app/controllers/video.js"></script>
+    <script src="/linker/js/app/directives/accessLevel.js"></script>
+    <script src="/linker/js/app/directives/newPagination.js"></script>
+    <script src="/linker/js/app/directives/ngEnter.js"></script>
+    <script src="/linker/js/app/directives/orFilter.js"></script>
+    <script src="/linker/js/app/directives/profileMeeting.js"></script>
+    <script src="/linker/js/app/directives/scrollTo.js"></script>
+    <script src="/linker/js/app/directives/uploader.js"></script>
+    <script src="/linker/js/app/filters/currentUserFirst.js"></script>
+    <script src="/linker/js/app/filters/startFrom.js"></script>
+    <script src="/linker/js/app/interfaces/filterModuleInterface.js"></script>
+    <script src="/linker/js/app/interfaces/mapStyleStorage.js"></script>
+    <script src="/linker/js/app/resources/CommentResource.js"></script>
+    <script src="/linker/js/app/resources/GenericApiResource.js"></script>
+    <script src="/linker/js/app/resources/GeoResource.js"></script>
+    <script src="/linker/js/app/resources/MeetingDetailResource.js"></script>
+    <script src="/linker/js/app/resources/MeetingResource.js"></script>
+    <script src="/linker/js/app/resources/ProfileResource.js"></script>
+    <script src="/linker/js/app/resources/TagResource.js"></script>
+    <script src="/linker/js/app/resources/TalkResource.js"></script>
+    <script src="/linker/js/app/resources/UserResource.js"></script>
+    <script src="/linker/js/app/services/auth.js"></script>
+    <script src="/linker/js/app/services/corp/browserDetection.js"></script>
+    <script src="/linker/js/app/services/corp/tumblrAPI.js"></script>
+    <script src="/linker/js/app/services/corp/userQueryForRootScope.js"></script>
+    <script src="/linker/js/app/services/distanceMath.js"></script>
+    <script src="/linker/js/app/services/eventService.js"></script>
+    <script src="/linker/js/app/services/geolocation.js"></script>
+    <script src="/linker/js/app/services/googleGeocoder.js"></script>
+    <script src="/linker/js/app/services/meetingCache.js"></script>
+    <script src="/linker/js/app/services/meetingFilters.js"></script>
+    <script src="/linker/js/app/services/meetingServer.js"></script>
+    <script src="/linker/js/app/services/messenger.js"></script>
+    <script src="/linker/js/app/services/timeInterval.js"></script>
+    <script src="/linker/js/app/services/uploadService.js"></script>
+    <script src="/linker/js/routingConfig.js"></script>
+    <!--SCRIPTS END-->
+
+    <!-- Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-51786023-1', 'addicaid.com');
+      ga('require', 'linkid', 'linkid.js');
+      ga('send', 'pageview');
+
+    </script>
+    <!-- Google Analytics end -->
+  </body>
+</html>
