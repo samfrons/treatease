@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="favicon.ico">
     
     <!-- Google Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Ruda:400,900,700' rel='stylesheet' type='text/css'>  
+    <!-- <link href='http://fonts.googleapis.com/css?family=Ruda:400,900,700' rel='stylesheet' type='text/css'>   -->
   
     <!-- Support for HTML5 -->
     <!--[if lt IE 9]>
@@ -23,46 +23,301 @@
     <![endif]-->
   
     
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <!-- Bootstrap -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <!-- Template Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/colors/brown.css">    
+    <!-- Layer Slider -->
+    <link rel="stylesheet" href="layerslider/css/layerslider.css" type="text/css">
+      <style>
+    #owl-demo .item img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+* {
+  font-family: "Open Sans", sans-serif ;
+  -webkit-font-smoothing: antialiased;
+}
+
+.owl-theme .owl-controls .owl-page span {
+display: block;
+width: 12px;
+height: 12px;
+margin: 5px 7px;
+filter: Alpha(Opacity=50);
+opacity: 0.5;
+-webkit-border-radius: 20px;
+-moz-border-radius: 20px;
+border-radius: 20px;
+background: #869791;
+}
+
+section.quiz {
+  padding: 0;
+  background: white;
+  box-shadow: 0 1px 10px 1px rgba(58,58,58,.3)
+}
+
+.owl-controls.clickable {
+  position: relative;
+top: 70px;
+}
+
+.owl-theme .owl-controls .owl-buttons div {
+color: #FFF;
+display: inline-block;
+zoom: 1;
+margin: 5px;
+padding: 3px 10px;
+font-size: 12px;
+-webkit-border-radius: 30px;
+-moz-border-radius: 30px;
+border-radius: 30px;
+background: #869791;
+filter: Alpha(Opacity=50);
+opacity: 0.5;
+width: 100px;
+height: auto;
+position: static;
+}
+
+.owl-pagination {
+    position: static;
+}
+
+.aqua.main-question {
+    background: rgb(05,219,194) !important;
+    color: white;
+    padding: 15px;
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 0;
+    opacity: 1;
+
+}
+
+
+h3.risk {
+  color: white;
+    padding: 15px;
+    font-size: 1.8em;
+    font-weight: 500;
+    background: #f23e47;
+    max-width: 700px;
+    margin: 20px auto;
+    text-align: center;
+    border-radius: 5px;
+}
+
+h3.risk > span {
+  margin-left: 10px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.sub-question {
+  padding: 10px;
+  margin: 0 auto;
+max-width: 700px;
+
+}
+
+.sub-question h3 {
+  font-size: 1.3em;
+    font-weight: 500;
+}
+
+ul.responses {
+  width: 100%;
+  margin-bottom: 0;
+/*border: 1px solid #ccc; */
+border-radius: 3px;
+padding: 0;
+}
+
+ul.responses.q1 {
+  max-width: 500px;
+}
+ul.responses li {
+  display: inline-block;
+/*border-right: 1px solid #ccc; */
+padding: 10px;
+text-align: center;
+background: #fafafa;
+border-radius: 3px;
+font-weight: 500;
+-webkit-font-smoothing: initial;
+}
+
+ul.responses li.last {
+  border-right: none;
+}
+
+ul.responses li.selected {
+  
+  background: #1ebebc;
+  color: white;
+}
+
+
+.substance h4{
+  font-weight: 500;
+}
+
+.middle-max {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+
+  .dmbutton {
+    border: 3px solid rgb(210, 221, 40) !important;
+    background: transparent;
+    color:rgb(210, 221, 40);
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    padding-top: 1.025rem;
+    padding-right: 2.25rem;
+    letter-spacing:0.85px;
+    padding-bottom: 1.0875rem;
+    padding-left: 2.25rem;
+    font-size: 1.55rem;
+    cursor: pointer;
+    font-weight: normal;
+    line-height: normal;
+    margin: 0 0 1.25rem;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    -webkit-transition: background-color 300ms ease-out;
+    -moz-transition: background-color 300ms ease-out;
+    transition: background-color 300ms ease-out;
+    -webkit-appearance: none;
+    font-weight: normal !important;
+  }
+
+  .dmbutton2:hover,
+  .dmbutton2:active,
+  .dmbutton2:focus{
+    color: #FFF;
+    background: rgb(210, 221, 40) !important;
+    background-color:rgb(210, 221, 40) !important;
+    border-color: #2B2E31;
+  }
+    .dmbutton:hover,
+  .dmbutton:active,
+  .dmbutton:focus{
+    color: #FFF;
+    background: rgb(210, 221, 40) !important;
+    background-color:rgb(210, 221, 40) !important;
+    border-color: #2B2E31;
+  }
+
+  .level {
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: .7em;
+    font-weight: 500;
+    margin: 10px;
+    -webkit-font-smoothing: initial;
+  }
+
+  .ratio {
+    margin-left: 10px;
+    font-size: .8em;
+    font-weight: bolder;
+    -webkit-font-smoothing: initial;
+  }
+
+  .level.high {
+    background: #f23e47 !important;
+  }
+
+  .level.moderate {
+    background: rgb(210, 221, 40) !important;
+  }
+
+  .level.low {
+    
+    background: rgb(05,219,194);
+  }
+
+  h3.rec {
+    font-size: 1em;
+  }
+
+  h4.rec.test {
+    color: #f23e47;
+  }
+  h4.rec > span {
+    margin-left: 10px;
+  }
+
+  h3.rec.high {
+    color: #f23e47;
+  }
+
+  h3.rec.moderate {
+    color: rgb(210, 221, 40);
+  }
+
+  h3.rec.low {
+    color: rgb(05,219,194);
+  }
+
+  .plan {
+    text-align: center;
+  }
+
+  .owl-prev {
+    float: left;
+  }
+
+  .owl-next {
+    float: right;
+  }
+
+    </style>
+
 
     <!--STYLES-->
-    <link rel="prefetch stylesheet" href="/assets/css/bootstrap.css">
-    <link rel="prefetch stylesheet" href="/css/bbpress.css">
-    <link rel="prefetch stylesheet" href="/css/carousel.css">
-    <link rel="prefetch stylesheet" href="/css/colors/asphalt.css">
-    <link rel="prefetch stylesheet" href="/css/colors/blue.css">
-    <link rel="prefetch stylesheet" href="/css/colors/brown.css">
-    <link rel="prefetch stylesheet" href="/css/colors/mustard.css">
-    <link rel="prefetch stylesheet" href="/css/colors/pomegranate.css">
-    <link rel="prefetch stylesheet" href="/css/colors/turquoise.css">
-    <link rel="prefetch stylesheet" href="/css/colors/yellow.css">
-    <link rel="prefetch stylesheet" href="/css/font-awesome.css">
-    <link rel="prefetch stylesheet" href="/css/hoverex-all.css">
-    <link rel="prefetch stylesheet" href="/css/jetmenu.css">
-    <link rel="prefetch stylesheet" href="/css/prettyPhoto.css">
-    <link rel="prefetch stylesheet" href="/css/quiz-style.css">
-    <link rel="prefetch stylesheet" href="/css/style.css">
-    <link rel="prefetch stylesheet" href="/layerslider/css/layerslider.css">
+    
     <!--STYLES END-->
+    <script src="js/modernizr.js"></script>
   </head>
 
   <body ng-app="treateaseApp">
-    <div class="topbar clearfix">
-        <div class="container">
-            <div class="col-lg-12 text-right">
-                <a href="http://addicaid.com" target="_blank" class="addicaid"><span >Visit Addicaid.com</span></a>
+
+
+
+<div class="topbar clearfix">
+      <div class="container">
+      <div class="col-lg-12 text-right">
+            <a href="http://addicaid.com" target="_blank" class="addicaid"><span >Visit Addicaid.com</span></a>
                 <div class="social_buttons">
                     <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>
                     <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>
                     <a href="#" data-toggle="tooltip" data-placement="bottom" title="Google+"><i class="fa fa-google-plus"></i></a>
                     
                 </div>
-            </div>
-        </div><!-- end container -->
+      </div>
+      </div><!-- end container -->
     </div><!-- end topbar -->
 
     <header class="header">
-        <div class="container">
-            <div class="site-header clearfix">
+      <div class="container">
+          <div class="site-header clearfix">
                 <div class="col-lg-3 col-md-3 col-sm-12 title-area">
                     <div class="site-title" id="title">
                         <a href="#" title="">
@@ -73,67 +328,71 @@
                 <div class="col-lg-9 col-md-12 col-sm-12">
                    <div id="nav" class="right">
                         <div class="container clearfix">
-                            <ul id="jetmenu" class="jetmenu blue">
-                                <li class="active"><a href="#">Home</a>
-                                    <ul class="dropdown">
-                                        <li><a href="index.html">Home - Shop Version</a></li>
-                                        <li><a href="index2.html">Home - Agency Version</a></li>
-                                        <li><a href="index3.html">Home - Business Version</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Pages</a>
-                                    <ul class="dropdown">
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li><a href="services.html">Services</a></li>
-                                        <li><a href="team-members.html">Team Members</a></li>
-                                        <li><a href="testimonials.html">Testimonials</a></li>
-                                        <li><a href="404.html">404 Error</a></li>
-                                        <li><a href="faq.html">FAQ Page</a></li>
-                                        <li><a href="left-sidebar.html">Left Sidebar</a></li>
-                                        <li><a href="right-sidebar.html">Right Sidebar</a></li>
-                                        <li><a href="fullwidth.html">Full Width</a></li>
-                                        <li><a href="login.html">Login</a></li>
-                                        <li><a href="register.html">Register</a></li>
-                                        <li><a href="contact.html">Contact</a></li> 
-                                    </ul>
-                                </li>
-                                <li><a href="#">Shop</a>
-                                    <ul class="dropdown">
-                                        <li><a href="digital-download.html">Products Page</a></li>
-                                        <li><a href="single-product.html">Single Product</a></li>
-                                        <li><a href="checkout.html">Checkout</a></li>
-                                        <li><a href="account.html">Account Page</a></li>
-                                        <li><a href="support.html">Support Center</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Portfolio</a>
-                                    <ul class="dropdown">
-                                        <li><a href="single-portfolio-1.html">Single Portfolio 1</a></li>
-                                        <li><a href="single-portfolio-2.html">Single Portfolio 2</a></li>
-                                        <li><a href="portfolio-2.html">Portfolio (2 Columns)</a></li>
-                                        <li><a href="portfolio-3.html">Portfolio (3 Columns)</a></li>
-                                        <li><a href="gallery-portfolio.html">Gallery</a></li>
-                                        <li><a href="masonry-grid-portfolio.html">Masonry Grid Style</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Blog</a>
-                                    <ul class="dropdown">
-                                        <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-                                        <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                                        <li><a href="single-with-sidebar.html">Single with Sidebar</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
+                        <ul id="jetmenu" class="jetmenu blue">
+                            <li class="active"><a href="#">Home</a>
+                                <ul class="dropdown">
+                                    <li><a href="index.html">Home - Shop Version</a></li>
+                                    <li><a href="index2.html">Home - Agency Version</a></li>
+                                    <li><a href="index3.html">Home - Business Version</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Pages</a>
+                                <ul class="dropdown">
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="services.html">Services</a></li>
+                                    <li><a href="team-members.html">Team Members</a></li>
+                                    <li><a href="testimonials.html">Testimonials</a></li>
+                                    <li><a href="404.html">404 Error</a></li>
+                                    <li><a href="faq.html">FAQ Page</a></li>
+                                    <li><a href="left-sidebar.html">Left Sidebar</a></li>
+                                    <li><a href="right-sidebar.html">Right Sidebar</a></li>
+                                    <li><a href="fullwidth.html">Full Width</a></li>
+                                    <li><a href="login.html">Login</a></li>
+                                    <li><a href="register.html">Register</a></li>
+                                    <li><a href="contact.html">Contact</a></li> 
+                                </ul>
+                            </li>
+                            <li><a href="#">Shop</a>
+                                <ul class="dropdown">
+                                    <li><a href="digital-download.html">Products Page</a></li>
+                                    <li><a href="single-product.html">Single Product</a></li>
+                                    <li><a href="checkout.html">Checkout</a></li>
+                                    <li><a href="account.html">Account Page</a></li>
+                                    <li><a href="support.html">Support Center</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Portfolio</a>
+                                <ul class="dropdown">
+                                    <li><a href="single-portfolio-1.html">Single Portfolio 1</a></li>
+                                    <li><a href="single-portfolio-2.html">Single Portfolio 2</a></li>
+                                    <li><a href="portfolio-2.html">Portfolio (2 Columns)</a></li>
+                                    <li><a href="portfolio-3.html">Portfolio (3 Columns)</a></li>
+                                    <li><a href="gallery-portfolio.html">Gallery</a></li>
+                                    <li><a href="masonry-grid-portfolio.html">Masonry Grid Style</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Blog</a>
+                                <ul class="dropdown">
+                                    <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
+                                    <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
+                                    <li><a href="single-with-sidebar.html">Single with Sidebar</a></li>
+                                </ul>
+                            </li>
+                        </ul>
                         </div>
                     </div><!-- nav -->   
                 </div><!-- title area -->
             </div><!-- site header -->
-        </div><!-- end container -->
+      </div><!-- end container -->
     </header><!-- end header -->
-    
+  
+
+
     <%- body %>
+    
 
 
+    
 
     
     <script src="assets/js/jquery.js"></script>
@@ -147,8 +406,6 @@
     <script src="js/jquery.prettyPhoto.js"></script>
     <script src="js/jquery.isotope.min.js"></script>
     <script src="js/custom.js"></script>
-    <script src="js/modernizr.js"></script>
-
     <!--SCRIPTS-->
     <script src="/linker/js/socket.io.js"></script>
     <script src="/linker/js/sails.io.js"></script>
@@ -161,105 +418,49 @@
     <script src="/js/components/angular/angular-sanitize.js"></script>
     <script src="/js/components/angular/angular-route.js"></script>
     <script src="/js/components/custom_angular_bootstrap.js"></script>
-    <script src="/js/bower_components/angular-ui-utils/modules/showhide/showhide.js"></script>
-    <script src="/js/bower_components/angular-ui-utils/modules/event/event.js"></script>
-    <script src="/js/bower_components/angular-ui-utils/modules/keypress/keypress.js"></script>
-    <script src="/js/bower_components/angular-ui-map/ui-map.js"></script>
-    <script src="/js/bower_components/angularytics/dist/angularytics.min.js"></script>
-    <script src="/js/bower_components/angular-socket-io/socket.js"></script>
     <script src="/linker/js/app/app.js"></script>
     <script src="/linker/js/app/controllers/video.js"></script>
+    <script src="/linker/js/app/directives/owl-carousel.js"></script>
     <script src="/linker/js/routingConfig.js"></script>
     <!--SCRIPTS END-->
-
     <script>
-        $(document).ready(function() {
-            $("#popularitems").owlCarousel({
-            items : 3,
-            lazyLoad : true,
-            navigation : false
-            });
-        });
-    </script>
+        // $(document).ready(function() {
+        // });
 
-
-    <script>
-      $(document).ready(function() {
-        $("#owl-demo").owlCarousel({
-          navigation : true, // Show next and prev buttons
-          slideSpeed : 300,
-          paginationSpeed : 400,
-          singleItem:true
-     
-          // "singleItem:true" is a shortcut for:
-          // items : 1, 
-          // itemsDesktop : false,
-          // itemsDesktopSmall : false,
-          // itemsTablet: false,
-          // itemsMobile : false
-     
-        });
-     
-      });
-
-
-        /* custom JSON js 
 
         $(document).ready(function() {
-     
-      $("#owl-demo").owlCarousel({
-        jsonPath : 'json/customData.json',
-        jsonSuccess : customDataSuccess
-      });
-     
-      function customDataSuccess(data){
-        var content = "";
-        for(var i in data["items"]){
-           
-           var img = data["items"][i].img;
-           var alt = data["items"][i].alt;
-     
-           content += "<img src=\"" +img+ "\" alt=\"" +alt+ "\">"
-        }
-        $("#owl-demo").html(content);
-      }
-     
-    });
-    */
-        /* JSON format 
+            // $("#popularitems").owlCarousel({
+            //     items : 3,
+            //     lazyLoad : true,
+            //     navigation : false
+            // });
+ 
+            $("#owl-demo").owlCarousel(
+            {
 
-        {
-      "items" : [
-        {
-          "img": "assets/owl1.jpg",
-          "alt" : "Owl Image 1"
-        },
-        {
-          "img": "assets/owl2.jpg",
-          "alt" : "Owl Image 2"
-        },
-        {
-          "img": "assets/owl3.jpg",
-          "alt" : "Owl Image 1"
-        },
-        {
-          "img": "assets/owl4.jpg",
-          "alt" : "Owl Image 2"
-        },
-        {
-          "img": "assets/owl5.jpg",
-          "alt" : "Owl Image 1"
-        },
-        {
-          "img": "assets/owl6.jpg",
-          "alt" : "Owl Image 2"
-        }
-      ]
-    }
-    */
+              navigation       : true, // Show next and prev buttons
+              slideSpeed       : 300,
+              paginationSpeed  : 400,
+              singleItem       : true
 
+              // "singleItem:true" is a shortcut for:
+              // items : 1, 
+              // itemsDesktop : false,
+              // itemsDesktopSmall : false,
+              // itemsTablet: false,
+              // itemsMobile : false
 
+            }
+            );
+         
+        });
     </script>
+    
+
+
+
+
+    
 
     
 

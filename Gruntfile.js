@@ -29,9 +29,9 @@ module.exports = function (grunt) {
    */
 
   var cssFilesToInject = [
-    'assets/css/**/*.css',
-    'css/**/*.css',
-    'layerslider/css/layerslider.css'
+    // 'assets/css/**/*.css',
+    // 'css/**/*.css',
+    // 'layerslider/css/layerslider.css'
 
   ];
 
@@ -46,9 +46,6 @@ module.exports = function (grunt) {
 
   var jsFilesToInject = [
 
-    // Below, as a demonstration, you'll see the built-in dependencies
-    // linked in the proper order order
-
     // Bring in the socket.io client
     'linker/js/socket.io.js',
 
@@ -58,6 +55,9 @@ module.exports = function (grunt) {
     // A simpler boilerplate library for getting you up and running w/ an
     // automatic listener for incoming messages from Socket.io.
     'linker/js/app.js',
+    // Below, as a demonstration, you'll see the built-in dependencies
+    // linked in the proper order order
+
 
     // *->    put other dependencies here   <-*
 
@@ -79,13 +79,13 @@ module.exports = function (grunt) {
     // 'js/components/angular-bootstrap/ui-bootstrap-tpls-0.6.0-SNAPSHOT.min.js',
 //    'js/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
 
-    'js/bower_components/angular-ui-utils/modules/showhide/showhide.js',
-    'js/bower_components/angular-ui-utils/modules/event/event.js',
-    'js/bower_components/angular-ui-utils/modules/keypress/keypress.js',
-    'js/bower_components/angular-ui-map/ui-map.js',   // for ui-map v 0.5
-    'js/bower_components/angular-ui-map/src/map.js',  // for ui-map v 0.4
-    'js/bower_components/angularytics/dist/angularytics.min.js',
-    'js/bower_components/angular-socket-io/socket.js',
+    // 'js/bower_components/angular-ui-utils/modules/showhide/showhide.js',
+    // 'js/bower_components/angular-ui-utils/modules/event/event.js',
+    // 'js/bower_components/angular-ui-utils/modules/keypress/keypress.js',
+    // 'js/bower_components/angular-ui-map/ui-map.js',   // for ui-map v 0.5
+    // 'js/bower_components/angular-ui-map/src/map.js',  // for ui-map v 0.4
+    // 'js/bower_components/angularytics/dist/angularytics.min.js',
+    // 'js/bower_components/angular-socket-io/socket.js',
 
     // All of the rest of your app scripts imported here
     'linker/**/*.js',
