@@ -1,20 +1,25 @@
-var app = angular.module('treateaseApp', []);
-app.directive('owlcarousel',function(){
+angular.module('treateaseApp').directive('owlcarousel',function($timeout){
  	return {
 		restrict : "A",
 		replace  : false,
-		templateUrl : '',
         link: function(scope, elem, attrs) {
-	      elem.bind('click', function() {
-	        elem.css('background-color', 'white');
-	        scope.$apply(function() {
-	          scope.color = "white";
-	        });
-	      });
-	      elem.bind('mouseover', function() {
-	        elem.css('cursor', 'pointer');
-	      });
+        	$timeout(function(){
+		      	angular.element("#owl-demo").owlCarousel({
+	 
+				      navigation : true, // Show next and prev buttons
+				      slideSpeed : 300,
+				      paginationSpeed : 400,
+				      singleItem:true
+				 
+				      // "singleItem:true" is a shortcut for:
+				      // items : 1, 
+				      // itemsDesktop : false,
+				      // itemsDesktopSmall : false,
+				      // itemsTablet: false,
+				      // itemsMobile : false
+			 
+			  	});
+			});  	
 	    }
-	}
- 
+	} 
 });
