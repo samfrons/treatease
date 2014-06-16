@@ -11,17 +11,6 @@
     
     <!-- Google Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Ruda:400,900,700' rel='stylesheet' type='text/css'>  
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="css/font-awesome.css">
-    <!-- Bootstrap -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <!-- Template Styles -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/colors/brown.css">    
-    <!-- Layer Slider -->
-    <link rel="stylesheet" href="layerslider/css/layerslider.css" type="text/css">
-
   
     <!-- Support for HTML5 -->
     <!--[if lt IE 9]>
@@ -33,65 +22,132 @@
         <script src="assets/js/respond.min.js"></script>
     <![endif]-->
   
-    <script src="js/modernizr.js"></script>
+    
 
     <!--STYLES-->
-    
+    <link rel="prefetch stylesheet" href="/assets/css/bootstrap.css">
+    <link rel="prefetch stylesheet" href="/css/bbpress.css">
+    <link rel="prefetch stylesheet" href="/css/carousel.css">
+    <link rel="prefetch stylesheet" href="/css/colors/asphalt.css">
+    <link rel="prefetch stylesheet" href="/css/colors/blue.css">
+    <link rel="prefetch stylesheet" href="/css/colors/brown.css">
+    <link rel="prefetch stylesheet" href="/css/colors/mustard.css">
+    <link rel="prefetch stylesheet" href="/css/colors/pomegranate.css">
+    <link rel="prefetch stylesheet" href="/css/colors/turquoise.css">
+    <link rel="prefetch stylesheet" href="/css/colors/yellow.css">
+    <link rel="prefetch stylesheet" href="/css/font-awesome.css">
+    <link rel="prefetch stylesheet" href="/css/hoverex-all.css">
+    <link rel="prefetch stylesheet" href="/css/jetmenu.css">
+    <link rel="prefetch stylesheet" href="/css/prettyPhoto.css">
+    <link rel="prefetch stylesheet" href="/css/quiz-style.css">
+    <link rel="prefetch stylesheet" href="/css/style.css">
+    <link rel="prefetch stylesheet" href="/layerslider/css/layerslider.css">
     <!--STYLES END-->
   </head>
 
   <body ng-app="treateaseApp">
+    <div class="topbar clearfix">
+        <div class="container">
+            <div class="col-lg-12 text-right">
+                <a href="http://addicaid.com" target="_blank" class="addicaid"><span >Visit Addicaid.com</span></a>
+                <div class="social_buttons">
+                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook"></i></a>
+                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>
+                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Google+"><i class="fa fa-google-plus"></i></a>
+                    
+                </div>
+            </div>
+        </div><!-- end container -->
+    </div><!-- end topbar -->
+
+    <header class="header">
+        <div class="container">
+            <div class="site-header clearfix">
+                <div class="col-lg-3 col-md-3 col-sm-12 title-area">
+                    <div class="site-title" id="title">
+                        <a href="#" title="">
+                            <img src="images/treatease-wordmark.png" width="200">
+                        </a>
+                    </div>
+                </div><!-- title area -->
+                <div class="col-lg-9 col-md-12 col-sm-12">
+                   <div id="nav" class="right">
+                        <div class="container clearfix">
+                            <ul id="jetmenu" class="jetmenu blue">
+                                <li class="active"><a href="#">Home</a>
+                                    <ul class="dropdown">
+                                        <li><a href="index.html">Home - Shop Version</a></li>
+                                        <li><a href="index2.html">Home - Agency Version</a></li>
+                                        <li><a href="index3.html">Home - Business Version</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Pages</a>
+                                    <ul class="dropdown">
+                                        <li><a href="about.html">About Us</a></li>
+                                        <li><a href="services.html">Services</a></li>
+                                        <li><a href="team-members.html">Team Members</a></li>
+                                        <li><a href="testimonials.html">Testimonials</a></li>
+                                        <li><a href="404.html">404 Error</a></li>
+                                        <li><a href="faq.html">FAQ Page</a></li>
+                                        <li><a href="left-sidebar.html">Left Sidebar</a></li>
+                                        <li><a href="right-sidebar.html">Right Sidebar</a></li>
+                                        <li><a href="fullwidth.html">Full Width</a></li>
+                                        <li><a href="login.html">Login</a></li>
+                                        <li><a href="register.html">Register</a></li>
+                                        <li><a href="contact.html">Contact</a></li> 
+                                    </ul>
+                                </li>
+                                <li><a href="#">Shop</a>
+                                    <ul class="dropdown">
+                                        <li><a href="digital-download.html">Products Page</a></li>
+                                        <li><a href="single-product.html">Single Product</a></li>
+                                        <li><a href="checkout.html">Checkout</a></li>
+                                        <li><a href="account.html">Account Page</a></li>
+                                        <li><a href="support.html">Support Center</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Portfolio</a>
+                                    <ul class="dropdown">
+                                        <li><a href="single-portfolio-1.html">Single Portfolio 1</a></li>
+                                        <li><a href="single-portfolio-2.html">Single Portfolio 2</a></li>
+                                        <li><a href="portfolio-2.html">Portfolio (2 Columns)</a></li>
+                                        <li><a href="portfolio-3.html">Portfolio (3 Columns)</a></li>
+                                        <li><a href="gallery-portfolio.html">Gallery</a></li>
+                                        <li><a href="masonry-grid-portfolio.html">Masonry Grid Style</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Blog</a>
+                                    <ul class="dropdown">
+                                        <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
+                                        <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
+                                        <li><a href="single-with-sidebar.html">Single with Sidebar</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div><!-- nav -->   
+                </div><!-- title area -->
+            </div><!-- site header -->
+        </div><!-- end container -->
+    </header><!-- end header -->
+    
     <%- body %>
 
 
 
-    <!--
-        Client-side Templates
-        ========================
-
-    		HTML templates are important prerequisites of modern, rich client applications.
-        To work their magic, frameworks like Backbone, Angular, Ember, and Knockout require
-        that you load these templates client-side.
-
-        By default, your Gruntfile is configured to automatically load and precompile
-        client-side JST templates in your `assets/linker/templates` folder, then
-        include them here automatically.
-        
-        To customize this behavior to fit your needs, just edit your Gruntfile.
-        For example, here are a few things you could do:
-
-            + Import templates from other directories
-            + Use a different template engine (handlebars, jade, dust, etc.)
-            + Internationalize your templates using a server-side stringfile
-              before they're served.
-    -->
-
-    <!--TEMPLATES-->
     
-    <!--TEMPLATES END-->
-
-
-    <!--
-
-      Client-side Javascript
-      ========================
-
-      You can always bring in JS files manually with `script` tags, or asynchronously
-      on the client using a solution like AMD (RequireJS).  Or, if you like, you can 
-      take advantage of Sails' boilerplate asset management.
-
-      By default, filesin your `assets/linker/js` folder are included here
-      automatically.  Both JavaScript (.js) and CoffeeScript (.coffee) are supported.
-      In production, your scripts will be minified and concatenated into a single file.
-      
-      To customize any part of the built-in behavior, just edit your Gruntfile.
-      For example, here are a few things you could do:
-          
-          + Change the order of your scripts
-          + Import scripts from other directories
-          + Use a different preprocessor, like TypeScript
-
-    -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.unveilEffects.js"></script>   
+    <script src="js/retina-1.1.0.js"></script>
+    <script src="js/jquery.hoverdir.js"></script>
+    <script src="js/owl.carousel.js"></script>  
+    <script src="js/jetmenu.js"></script>   
+    <script src="js/jquery.hoverex.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/jquery.isotope.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/modernizr.js"></script>
 
     <!--SCRIPTS-->
     <script src="/linker/js/socket.io.js"></script>
@@ -105,8 +161,6 @@
     <script src="/js/components/angular/angular-sanitize.js"></script>
     <script src="/js/components/angular/angular-route.js"></script>
     <script src="/js/components/custom_angular_bootstrap.js"></script>
-    <script src="/js/components/markerclusterer.js"></script>
-    <script src="/js/components/oms.min.js"></script>
     <script src="/js/bower_components/angular-ui-utils/modules/showhide/showhide.js"></script>
     <script src="/js/bower_components/angular-ui-utils/modules/event/event.js"></script>
     <script src="/js/bower_components/angular-ui-utils/modules/keypress/keypress.js"></script>
@@ -114,78 +168,100 @@
     <script src="/js/bower_components/angularytics/dist/angularytics.min.js"></script>
     <script src="/js/bower_components/angular-socket-io/socket.js"></script>
     <script src="/linker/js/app/app.js"></script>
-    <script src="/linker/js/app/controllers/corp/aboutUs.js"></script>
-    <script src="/linker/js/app/controllers/corp/browserCheck.js"></script>
-    <script src="/linker/js/app/controllers/corp/emailListSignup.js"></script>
-    <script src="/linker/js/app/controllers/corp/footer.js"></script>
-    <script src="/linker/js/app/controllers/corp/header.js"></script>
-    <script src="/linker/js/app/controllers/corp/headline.js"></script>
-    <script src="/linker/js/app/controllers/corp/index.js"></script>
-    <script src="/linker/js/app/controllers/corp/inspiration.js"></script>
-    <script src="/linker/js/app/controllers/corp/investors.js"></script>
-    <script src="/linker/js/app/controllers/corp/login.js"></script>
-    <script src="/linker/js/app/controllers/corp/main.js"></script>
-    <script src="/linker/js/app/controllers/corp/map.js"></script>
-    <script src="/linker/js/app/controllers/corp/meetingDetailSmall.js"></script>
-    <script src="/linker/js/app/controllers/corp/meetingFilters.js"></script>
-    <script src="/linker/js/app/controllers/corp/meetingList.js"></script>
-    <script src="/linker/js/app/controllers/corp/meetingSearch.js"></script>
-    <script src="/linker/js/app/controllers/corp/meetingentry.js"></script>
-    <script src="/linker/js/app/controllers/corp/meetings.js"></script>
-    <script src="/linker/js/app/controllers/corp/mission.js"></script>
-    <script src="/linker/js/app/controllers/corp/press.js"></script>
-    <script src="/linker/js/app/controllers/corp/register.js"></script>
-    <script src="/linker/js/app/controllers/corp/signupFlow.js"></script>
-    <script src="/linker/js/app/controllers/corp/thankYou.js"></script>
-    <script src="/linker/js/app/controllers/corp/tumblr.js"></script>
-    <script src="/linker/js/app/controllers/corp/tumblrPostDetail.js"></script>
-    <script src="/linker/js/app/controllers/debug.js"></script>
-    <script src="/linker/js/app/controllers/filter.js"></script>
-    <script src="/linker/js/app/controllers/login.js"></script>
-    <script src="/linker/js/app/controllers/map.js"></script>
-    <script src="/linker/js/app/controllers/meetingDetail.js"></script>
-    <script src="/linker/js/app/controllers/messages.js"></script>
-    <script src="/linker/js/app/controllers/pagedList.js"></script>
-    <script src="/linker/js/app/controllers/profile.js"></script>
-    <script src="/linker/js/app/controllers/register.js"></script>
-    <script src="/linker/js/app/controllers/talks.js"></script>
     <script src="/linker/js/app/controllers/video.js"></script>
-    <script src="/linker/js/app/directives/accessLevel.js"></script>
-    <script src="/linker/js/app/directives/newPagination.js"></script>
-    <script src="/linker/js/app/directives/ngEnter.js"></script>
-    <script src="/linker/js/app/directives/orFilter.js"></script>
-    <script src="/linker/js/app/directives/profileMeeting.js"></script>
-    <script src="/linker/js/app/directives/scrollTo.js"></script>
-    <script src="/linker/js/app/directives/uploader.js"></script>
-    <script src="/linker/js/app/filters/currentUserFirst.js"></script>
-    <script src="/linker/js/app/filters/startFrom.js"></script>
-    <script src="/linker/js/app/interfaces/filterModuleInterface.js"></script>
-    <script src="/linker/js/app/interfaces/mapStyleStorage.js"></script>
-    <script src="/linker/js/app/resources/CommentResource.js"></script>
-    <script src="/linker/js/app/resources/GenericApiResource.js"></script>
-    <script src="/linker/js/app/resources/GeoResource.js"></script>
-    <script src="/linker/js/app/resources/MeetingDetailResource.js"></script>
-    <script src="/linker/js/app/resources/MeetingResource.js"></script>
-    <script src="/linker/js/app/resources/ProfileResource.js"></script>
-    <script src="/linker/js/app/resources/TagResource.js"></script>
-    <script src="/linker/js/app/resources/TalkResource.js"></script>
-    <script src="/linker/js/app/resources/UserResource.js"></script>
-    <script src="/linker/js/app/services/auth.js"></script>
-    <script src="/linker/js/app/services/corp/browserDetection.js"></script>
-    <script src="/linker/js/app/services/corp/tumblrAPI.js"></script>
-    <script src="/linker/js/app/services/corp/userQueryForRootScope.js"></script>
-    <script src="/linker/js/app/services/distanceMath.js"></script>
-    <script src="/linker/js/app/services/eventService.js"></script>
-    <script src="/linker/js/app/services/geolocation.js"></script>
-    <script src="/linker/js/app/services/googleGeocoder.js"></script>
-    <script src="/linker/js/app/services/meetingCache.js"></script>
-    <script src="/linker/js/app/services/meetingFilters.js"></script>
-    <script src="/linker/js/app/services/meetingServer.js"></script>
-    <script src="/linker/js/app/services/messenger.js"></script>
-    <script src="/linker/js/app/services/timeInterval.js"></script>
-    <script src="/linker/js/app/services/uploadService.js"></script>
     <script src="/linker/js/routingConfig.js"></script>
     <!--SCRIPTS END-->
+
+    <script>
+        $(document).ready(function() {
+            $("#popularitems").owlCarousel({
+            items : 3,
+            lazyLoad : true,
+            navigation : false
+            });
+        });
+    </script>
+
+
+    <script>
+      $(document).ready(function() {
+        $("#owl-demo").owlCarousel({
+          navigation : true, // Show next and prev buttons
+          slideSpeed : 300,
+          paginationSpeed : 400,
+          singleItem:true
+     
+          // "singleItem:true" is a shortcut for:
+          // items : 1, 
+          // itemsDesktop : false,
+          // itemsDesktopSmall : false,
+          // itemsTablet: false,
+          // itemsMobile : false
+     
+        });
+     
+      });
+
+
+        /* custom JSON js 
+
+        $(document).ready(function() {
+     
+      $("#owl-demo").owlCarousel({
+        jsonPath : 'json/customData.json',
+        jsonSuccess : customDataSuccess
+      });
+     
+      function customDataSuccess(data){
+        var content = "";
+        for(var i in data["items"]){
+           
+           var img = data["items"][i].img;
+           var alt = data["items"][i].alt;
+     
+           content += "<img src=\"" +img+ "\" alt=\"" +alt+ "\">"
+        }
+        $("#owl-demo").html(content);
+      }
+     
+    });
+    */
+        /* JSON format 
+
+        {
+      "items" : [
+        {
+          "img": "assets/owl1.jpg",
+          "alt" : "Owl Image 1"
+        },
+        {
+          "img": "assets/owl2.jpg",
+          "alt" : "Owl Image 2"
+        },
+        {
+          "img": "assets/owl3.jpg",
+          "alt" : "Owl Image 1"
+        },
+        {
+          "img": "assets/owl4.jpg",
+          "alt" : "Owl Image 2"
+        },
+        {
+          "img": "assets/owl5.jpg",
+          "alt" : "Owl Image 1"
+        },
+        {
+          "img": "assets/owl6.jpg",
+          "alt" : "Owl Image 2"
+        }
+      ]
+    }
+    */
+
+
+    </script>
+
+    
 
     <!-- Google Analytics -->
     <script>

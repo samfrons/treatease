@@ -29,11 +29,10 @@ module.exports = function (grunt) {
    */
 
   var cssFilesToInject = [
-    'linker/styles/bootstrap/css/bootstrap.css',
-    'linker/styles/fontawesome/css/font-awesome.min.css',
-    'linker/styles/fontawesome/css/font-awesome-ie7.min.css',
-    'linker/styles/*.css',
-    'linker/styles/corp/*.css',
+    'assets/css/**/*.css',
+    'css/**/*.css',
+    'layerslider/css/layerslider.css'
+
   ];
 
 
@@ -74,9 +73,6 @@ module.exports = function (grunt) {
     'js/components/angular/angular-sanitize.js',
     'js/components/angular/angular-route.js',
     'js/components/custom_angular_bootstrap.js',
-
-    'js/components/markerclusterer.js',
-    'js/components/oms.min.js',
     
 
     // bower components
@@ -92,7 +88,7 @@ module.exports = function (grunt) {
     'js/bower_components/angular-socket-io/socket.js',
 
     // All of the rest of your app scripts imported here
-    'linker/**/*.js'
+    'linker/**/*.js',
   ];
 
 
