@@ -1,0 +1,599 @@
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MaxFront | Bootstrap Front-End</title>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="author" content="">
+	<link rel="shortcut icon" href="favicon.ico">
+    
+	<!-- Google Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
+	
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<!-- Bootstrap -->
+	<link href="assets/css/bootstrap.css" rel="stylesheet">
+	<!-- Template Styles -->
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/colors/brown.css">    
+	<!-- Layer Slider -->
+	<link rel="stylesheet" href="layerslider/css/layerslider.css" type="text/css">
+    <style>
+    #owl-demo .item img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+* {
+  font-family: "Open Sans", sans-serif ;
+  -webkit-font-smoothing: antialiased;
+}
+
+.owl-theme .owl-controls .owl-page span {
+display: block;
+width: 12px;
+height: 12px;
+margin: 5px 7px;
+filter: Alpha(Opacity=50);
+opacity: 0.5;
+-webkit-border-radius: 20px;
+-moz-border-radius: 20px;
+border-radius: 20px;
+background: #869791;
+}
+
+section.quiz {
+  padding: 0;
+  background: white;
+  box-shadow: 0 1px 10px 1px rgba(58,58,58,.3)
+}
+
+.owl-controls.clickable {
+  position: relative;
+top: 70px;
+}
+
+.owl-theme .owl-controls .owl-buttons div {
+color: #FFF;
+display: inline-block;
+zoom: 1;
+margin: 5px;
+padding: 3px 10px;
+font-size: 12px;
+-webkit-border-radius: 30px;
+-moz-border-radius: 30px;
+border-radius: 30px;
+background: #869791;
+filter: Alpha(Opacity=50);
+opacity: 0.5;
+width: 100px;
+height: auto;
+position: static;
+}
+
+.owl-pagination {
+    position: static;
+}
+
+.aqua.main-question {
+    background: rgb(05,219,194) !important;
+    color: white;
+    padding: 15px;
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 0;
+    opacity: 1;
+
+}
+
+
+h3.risk {
+  color: white;
+    padding: 15px;
+    font-size: 1.8em;
+    font-weight: 500;
+    background: #f23e47;
+    max-width: 700px;
+    margin: 20px auto;
+    text-align: center;
+    border-radius: 5px;
+}
+
+h3.risk > span {
+  margin-left: 10px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.sub-question {
+  padding: 10px;
+  margin: 0 auto;
+max-width: 700px;
+
+}
+
+.sub-question h3 {
+  font-size: 1.3em;
+    font-weight: 500;
+}
+
+ul.responses {
+  width: 100%;
+  margin-bottom: 0;
+/*border: 1px solid #ccc; */
+border-radius: 3px;
+padding: 0;
+}
+
+ul.responses.q1 {
+  max-width: 500px;
+}
+ul.responses li {
+  display: inline-block;
+/*border-right: 1px solid #ccc; */
+padding: 10px;
+text-align: center;
+background: #fafafa;
+border-radius: 3px;
+font-weight: 500;
+-webkit-font-smoothing: initial;
+}
+
+ul.responses li.last {
+  border-right: none;
+}
+
+ul.responses li.selected {
+  
+  background: #1ebebc;
+  color: white;
+}
+
+
+.substance h4{
+  font-weight: 500;
+}
+
+.middle-max {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+
+  .dmbutton {
+    border: 3px solid rgb(210, 221, 40) !important;
+    background: transparent;
+    color:rgb(210, 221, 40);
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    padding-top: 1.025rem;
+    padding-right: 2.25rem;
+    letter-spacing:0.85px;
+    padding-bottom: 1.0875rem;
+    padding-left: 2.25rem;
+    font-size: 1.55rem;
+    cursor: pointer;
+    font-weight: normal;
+    line-height: normal;
+    margin: 0 0 1.25rem;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    -webkit-transition: background-color 300ms ease-out;
+    -moz-transition: background-color 300ms ease-out;
+    transition: background-color 300ms ease-out;
+    -webkit-appearance: none;
+    font-weight: normal !important;
+  }
+
+  .dmbutton2:hover,
+  .dmbutton2:active,
+  .dmbutton2:focus{
+    color: #FFF;
+    background: rgb(210, 221, 40) !important;
+    background-color:rgb(210, 221, 40) !important;
+    border-color: #2B2E31;
+  }
+    .dmbutton:hover,
+  .dmbutton:active,
+  .dmbutton:focus{
+    color: #FFF;
+    background: rgb(210, 221, 40) !important;
+    background-color:rgb(210, 221, 40) !important;
+    border-color: #2B2E31;
+  }
+
+  .level {
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: .7em;
+    font-weight: 500;
+    margin: 10px;
+    -webkit-font-smoothing: initial;
+  }
+
+  .ratio {
+    margin-left: 10px;
+    font-size: .8em;
+    font-weight: bolder;
+    -webkit-font-smoothing: initial;
+  }
+
+  .level.high {
+    background: #f23e47 !important;
+  }
+
+  .level.moderate {
+    background: rgb(210, 221, 40) !important;
+  }
+
+  .level.low {
+    
+    background: rgb(05,219,194);
+  }
+
+  h3.rec {
+    font-size: 1em;
+  }
+
+  h4.rec.test {
+    color: #f23e47;
+  }
+  h4.rec > span {
+    margin-left: 10px;
+  }
+
+  h3.rec.high {
+    color: #f23e47;
+  }
+
+  h3.rec.moderate {
+    color: rgb(210, 221, 40);
+  }
+
+  h3.rec.low {
+    color: rgb(05,219,194);
+  }
+
+  .plan {
+    text-align: center;
+  }
+
+  .owl-prev {
+    float: left;
+  }
+
+  .owl-next {
+    float: right;
+  }
+
+    </style>
+
+  
+	<!-- Support for HTML5 -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Enable media queries on older browsers -->
+	<!--[if lt IE 9]>
+		<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
+  
+	<script src="js/modernizr.js"></script>
+  </head>
+<body>
+
+
+    
+<br>
+<div class="container">
+
+
+
+
+
+    <section class="quiz">
+        <div id="owl-demo" class="owl-carousel owl-theme">
+         
+         <!-- full result -->
+          <div class="item question-screen q-results">
+            <h2 class="main-question aqua">Full Results</h2>
+        
+          <div class="middle-max">
+            <h3 class="risk">At Risk!<span class="fa fa-warning"></span></h3>
+          
+              <div class="substance sub-question">
+                <h4>Heavy Drinking <span class="level high">High<span class="ratio">31/40</span></span></h4>
+                <h3 class="rec high">Get immediate support</h3>
+                <p>Binge drinking regularly incidcates that something might be wrong. Please continue</p>
+                <div class="btn-group">
+              <button type="button" class="btn btn-default">Find meeting</button>
+              <button type="button" class="btn btn-default">Find specialist</button>
+              <button type="button" class="btn btn-default">Find rehab</button>
+              <button type="button" class="btn btn-default">Learn more</button>
+            </div>
+              </div>
+              <hr>
+
+              <div class="substance sub-question">
+                <h4>Tobacco<span class="level moderate">Moderate<span class="ratio">21/40</span></span></h4>
+                <h3 class="rec moderate">Consider continual support</h3>
+                <p>Binge drinking regularly incidcates that something might be wrong. Please continue</p>
+                <div class="btn-group">
+              <button type="button" class="btn btn-default">Find meeting</button>
+              <button type="button" class="btn btn-default">Find specialist</button>
+              <button type="button" class="btn btn-default">Find rehab</button>
+              <button type="button" class="btn btn-default">Learn more</button>
+            </div>
+              </div>
+              <hr>
+
+              <div class="substance sub-question">
+                <h4>Illegal/prescription drugs<span class="level low">Low<span class="ratio">1/40</span></span></h4>
+                <h3 class="rec low">Good work! Keep yourself in check.</h3>
+                <p>Binge drinking regularly incidcates that something might be wrong. Please continue</p>
+                <div class="btn-group">
+              <button type="button" class="btn btn-default">Find meeting</button>
+              <button type="button" class="btn btn-default">Find specialist</button>
+              <button type="button" class="btn btn-default">Find rehab</button>
+              <button type="button" class="btn btn-default">Learn more</button>
+            </div>
+              </div>
+              <hr>
+
+            <div class="substance sub-question">
+            <h4 class="rec test">Recommended testing<span class="fa fa-heart"></span></h4>
+            <div class="btn-group">
+              <button type="button" class="btn btn-default">HIV</button>
+              <button type="button" class="btn btn-default">Hepatitis B &amp; C</button>
+              </div>
+           
+
+            </div>
+            <hr>
+
+            <div class="plan">
+              <div class="dmbutton">
+               Make your treatment plan
+              </div>
+            </div>
+            </div>
+
+          </div>
+
+        
+        <!-- quick result -->
+          <div class="item question-screen q-results">
+            <h2 class="main-question aqua">Quick Results</h2>
+        
+          <div class="middle-max">
+            <h3 class="risk">At Risk!<span class="fa fa-warning"></span></h3>
+          
+              <div class="substance sub-question">
+                <h4>Heavy Drinking</h4>
+                <p>Binge drinking regularly incidcates that something might be wrong. Please continue</p>
+                <div class="btn-group">
+              <button type="button" class="btn btn-default">Find meeting</button>
+              <button type="button" class="btn btn-default">Find specialist</button>
+              <button type="button" class="btn btn-default">Find rehab</button>
+              <button type="button" class="btn btn-default">Learn more</button>
+            </div>
+              </div>
+
+              <div class="substance sub-question">
+                <h4>Tobacco</h4>
+                <p>Binge drinking regularly incidcates that something might be wrong. Please continue</p>
+                  <div class="btn-group">
+              <button type="button" class="btn btn-default">Find meeting</button>
+              <button type="button" class="btn btn-default">Find specialist</button>
+              <button type="button" class="btn btn-default">Find rehab</button>
+              <button type="button" class="btn btn-default">Learn more</button>
+            </div>
+              </div>
+
+              <div class="substance sub-question">
+                <h4>Illegal/prescription drugs</h4>
+                <p>Binge drinking regularly incidcates that something might be wrong. Please continue</p>
+                  <div class="btn-group">
+              <button type="button" class="btn btn-default">Find meeting</button>
+              <button type="button" class="btn btn-default">Find specialist</button>
+              <button type="button" class="btn btn-default">Find rehab</button>
+              <button type="button" class="btn btn-default">Learn more</button>
+            </div>
+              </div>
+            <hr>
+            <div class="plan">
+              <div class="dmbutton">
+                Start recommended treatment
+              </div>
+              <br>
+
+              <div class="dmbutton">
+                Continue Evaluation
+              </div>
+            </div>
+            </div>
+
+          </div>
+          
+
+
+                  
+          
+
+
+           <!-- standard question -->
+          <div class="item question-screen">
+            <h2 class="main-question aqua">In the past year, how often have you used the following?</h2>
+            
+            <div class="sub-question">
+                <h3>Alcohol (For men, 5 or more drinks a day. For women, 4 or more drinks a day)</h3>
+                <ul class="responses q1">
+                    <li class="selected">Never</li>
+                    <li>Once or Twice</li>
+                    <li>Monthly</li>
+                    <li>Weekly</li>
+                    <li class="last">Daily or almost daily</li>
+                </ul>
+            </div>
+
+
+            <div class="sub-question">
+                  <h3>Tobacco Products</h3>
+                  <ul class="responses q1">
+                      <li>Never</li>
+                      <li>Once or Twice</li>
+                      <li>Monthly</li>
+                      <li>Weekly</li>
+                      <li class="last">Daily or almost daily</li>
+                  </ul>
+              </div>
+
+            <div class="sub-question">
+                  <h3>Prescription Drugs for Non-Medical Reasons</h3>
+                  <ul class="responses q1">
+                      <li>Never</li>
+                      <li>Once or Twice</li>
+                      <li>Monthly</li>
+                      <li>Weekly</li>
+                      <li class="last">Daily or almost daily</li>
+                  </ul>
+              </div>
+
+
+              <div class="sub-question">
+                  <h3>Illegal Drugs</h3>
+                  <ul class="responses q1">
+                      <li>Never</li>
+                      <li>Once or Twice</li>
+                      <li>Monthly</li>
+                      <li>Weekly</li>
+                      <li class="last">Daily or almost daily</li>
+                  </ul>
+              </div>
+
+          </div>
+
+
+          <div class="item">
+            
+            
+          </div>
+        </div>
+
+
+	</section><!-- end section -->
+
+    </div>
+	
+
+	
+	
+
+
+
+    <div class="dmtop">Scroll to Top</div>
+
+      <!-- Main Scripts-->
+	<script src="assets/js/jquery.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.unveilEffects.js"></script>	
+	<script src="js/retina-1.1.0.js"></script>
+	<script src="js/jquery.hoverdir.js"></script>
+    <script src="js/owl.carousel.js"></script>	
+    <script src="js/jetmenu.js"></script>	
+	<script src="js/jquery.hoverex.min.js"></script>
+	<script src="js/jquery.prettyPhoto.js"></script>
+  	<script src="js/jquery.isotope.min.js"></script>
+	<script src="js/custom.js"></script>
+    <script>
+
+    $(document).ready(function() {
+ 
+  $("#owl-demo").owlCarousel({
+ 
+      navigation : true, // Show next and prev buttons
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      singleItem:true
+ 
+      // "singleItem:true" is a shortcut for:
+      // items : 1, 
+      // itemsDesktop : false,
+      // itemsDesktopSmall : false,
+      // itemsTablet: false,
+      // itemsMobile : false
+ 
+  });
+ 
+});
+
+
+    /* custom JSON js 
+
+    $(document).ready(function() {
+ 
+  $("#owl-demo").owlCarousel({
+    jsonPath : 'json/customData.json',
+    jsonSuccess : customDataSuccess
+  });
+ 
+  function customDataSuccess(data){
+    var content = "";
+    for(var i in data["items"]){
+       
+       var img = data["items"][i].img;
+       var alt = data["items"][i].alt;
+ 
+       content += "<img src=\"" +img+ "\" alt=\"" +alt+ "\">"
+    }
+    $("#owl-demo").html(content);
+  }
+ 
+});
+*/
+    /* JSON format 
+
+    {
+  "items" : [
+    {
+      "img": "assets/owl1.jpg",
+      "alt" : "Owl Image 1"
+    },
+    {
+      "img": "assets/owl2.jpg",
+      "alt" : "Owl Image 2"
+    },
+    {
+      "img": "assets/owl3.jpg",
+      "alt" : "Owl Image 1"
+    },
+    {
+      "img": "assets/owl4.jpg",
+      "alt" : "Owl Image 2"
+    },
+    {
+      "img": "assets/owl5.jpg",
+      "alt" : "Owl Image 1"
+    },
+    {
+      "img": "assets/owl6.jpg",
+      "alt" : "Owl Image 2"
+    }
+  ]
+}
+*/
+
+
+	</script>
+	</body>
+</html>

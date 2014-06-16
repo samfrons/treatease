@@ -18,7 +18,6 @@
 @import url("jetmenu.css") screen;
 @import url("prettyPhoto.css") screen;
 @import url("hoverex-all.css") screen;
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
 
 /*	################################################################
 	1. GENERAL STRUCTURES
@@ -26,30 +25,25 @@
 	* { 
 		margin: 0;
 		padding: 0px;
-		font-family: 'Open Sans', sans-serif;
+		font-family: 'Ruda', sans-serif;
 	} 
 	body { 
-		background: white;
+		background: #f8f8f8; 
 		margin: 0; 
 		height: 100%; 
 		z-index: 1000;
 		color: #696E74;
 	}
-
-	body > .container {
-		max-width: 100%;
-		padding: 0;
-	}
 	
 	h1, h2, h3, h4, h5, h6 {
-		font-family: 'Open Sans', sans-serif;
+		font-family: 'Ruda', sans-serif;
 		font-weight: 700;
 	}
 	
 	p { 
 		padding: 0; 
 		margin-bottom: 12px; 
-		font-family: 'Open Sans', sans-serif !important; 
+		font-family: 'Ruda', sans-serif !important; 
 		font-weight: 300;
 		font-size: 14px; 
 		line-height: 24px;
@@ -400,7 +394,6 @@
 		width:60%;
 		font-weight:300;
 		line-height:1.5;
-
 	}
 	body.nobg #layerslider * {
 		font-weight: 300;
@@ -419,25 +412,13 @@
 		position: relative;
 		top:20%;
 	}	
-
-	#market-wrapper {
-		background: url(../images/marketbk1.jpg);
-		background-size: cover;
-		background-position: center center;
-	}
 	#market-wrapper,
 	.market-call {
-		
+		background:#dadad2;
 	}
 	#market-wrapper h1 {
 		color:#ffffff;
 		padding:40px 0 0;
-		font-family: "Pacifico";
-		padding-bottom: 12vw;
-		letter-spacing: .5px;
-		font-size: 4em;
-		opacity: .9;
-		line-height: 1.5em;
 	}
 	#market-wrapper .mbuttons {
 		margin:20px 0 0;
@@ -446,8 +427,7 @@
 		background-repeat:no-repeat;
 		background-size:cover;
 		background-position:top;
-		background: url(../images/marketbk2.jpg);
-		background-size: 100% auto;
+		background-color: #F5F5F5;
 		bottom: 0;
 		left: 0;
 		right: 0;
@@ -499,7 +479,7 @@
 		font-size:11px;
 		font-style:italic;
 		color:#798184;
-		font-family: 'Open Sans', sans-serif;
+		font-family: 'Ruda', sans-serif;
 		font-weight:300;
 		list-style: none outside none;
 		margin: 20px 0 0;
@@ -526,7 +506,7 @@
 		height:40px !important;
 		float:left !important;
 		display:inline !important;
-		font-family: 'Open Sans', sans-serif !important;
+		font-family: 'Ruda', sans-serif !important;
 		font-weight:normal !important;
 		font-style:italic !important;		
 		font-size:11px !important;
@@ -603,7 +583,7 @@
 	}
 		
 	.topbar	{
-		background:rgb(255, 165, 0) !important;
+		background:#F8F8F8;
 		color:#ffffff;
 	}
 	.top-bar {
@@ -638,7 +618,7 @@
 		z-index: 99;
 	}
 	.site-header{
-		padding:10px 0 0;
+		padding:40px 0 0;
 	}
 	.header-image .title-area {
 		padding: 0;
@@ -757,10 +737,8 @@
 		padding:30px 0;
 	}
 	.section2 {
-		background:white;
-		padding: 0;
-		max-width: 1200px;
-		margin: 0 auto;
+		background:#464646;
+		padding:30px 0;
 	}
 	
 	.section3	{
@@ -843,25 +821,26 @@
 		border-bottom:1px solid;
 	}
 	.message {
-		padding:0px 0 !important;
+		padding:20px 0 !important;
 		display:block;
 		position:relative;
 		overflow:hidden;
 	}
 	.message .small-title  {
-		color:gray;
+		color:#ffffff;
 		margin:30px 0 0;
 		font-size:18px;
-		padding: 15px;
-		
+		text-transform:uppercase;
 	}
 	.message .big-title {
 		letter-spacing:-0.80px;
-		color:gray;
+		color:#ffffff; 
+		text-transform:uppercase; 
 		font-size:38px; 
 		font-weight:700;
 	}
 	.message h3 {
+		text-transform:uppercase; 
 		font-weight:700;
 	}
 	.message .button {
@@ -995,7 +974,7 @@
 	.item_price h3 span {
 		color: #2B2E31;
 		display: block;
-		font-family: 'Open Sans', sans-serif;
+		font-family: 'Ruda', sans-serif;
 		font-size: 41px;
 		font-weight: 400;
 		margin: 25px 0 0;
@@ -1062,7 +1041,7 @@
 	}
 	.general-title p {
 		color: #696E74;
-		font-family: 'Open Sans', sans-serif !important;
+		font-family: 'Ruda', sans-serif !important;
 		font-size: 18px;
 		font-style: italic;
 		font-weight: 300;
@@ -1379,7 +1358,7 @@
 		font-style:italic;
 		color:#798184;
 		padding:0 10px;
-		font-family: 'Open Sans', sans-serif !important;
+		font-family: 'Ruda', sans-serif !important;
 		font-weight:300;
 	}
 	
@@ -1465,19 +1444,12 @@
 	.dmbutton:active,
 	.dmbutton:focus{
 		color: #ffffff;
-		background-color: rgb(210, 221, 40) !important;
-		
-	}
-
-	.quiz-link {
-		color: rgb(210, 221, 40) !important;
-	}
-	.quiz-link:hover {
-		color: white !important;
+		background-color: #222222;
+		border-color: #ffffff;
 	}
 	.dmbutton {
-		border: 3px solid rgb(210, 221, 40) !important;
-		background: transparent;
+		background:rgba(0, 0, 0, 0);
+		border: 1px solid #ffffff;
 		color: #ffffff;
 		-webkit-border-radius: 2px;
 		border-radius: 2px;
@@ -1505,6 +1477,7 @@
 	.dmbutton2:active,
 	.dmbutton2:focus{
 		color: #2B2E31;
+		background-color: #ffffff;
 		border-color: #2B2E31;
 	}
 	.dmbutton2 {
@@ -2236,7 +2209,7 @@
 	a.readmore {
 		text-transform:none;
 		display: block;
-		font-family: 'Open Sans', sans-serif !important;
+		font-family: 'Ruda', sans-serif !important;
 		font-size:12px;
 		font-style:italic;
 	}
@@ -2330,53 +2303,4 @@
 @media only screen and (min-width: 40.063em) {
 	button, .button {
 		display: inline-block; } 
-}
-
-
-
-
-/* updates */ 
-
-.social_buttons {
-	display: inline-block !important;
-}
-
-.buttons {
-	margin: 0 auto;
-	max-width: 700px;
-	text-align: center;
-}
-
-.no-touch .dm-icon-effect-1 .dm-icon:hover {
-	background-color: rgb(210, 221, 40) !important;
-}
-
-.aqua {
-	background: rgb(105,219,194) !important;
-	background-color: rgb(105,219,194) !important;
-}
-.blue > li.active {
-	line-height: 20px;
-}
-
-.blue > li.active > a {
-	border: none;
-	color: #08c;
-	line-height: 20px;
-}
-.jetmenu > li {
-	display: inline-block;
-	width: auto;
-}
-.jetmenu > li > a {
-	padding: 5px 20px;
-}
-
-.jetmenu > li.active > a {
-	height: 28px;
-}
-
-.owl-carousel {
-	display: none;
-
 }
