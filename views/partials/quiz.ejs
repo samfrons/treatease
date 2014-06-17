@@ -2,7 +2,7 @@
         <div id="owl-demo" class="owl-carousel owl-theme" owlcarousel>
          
          <!-- full result -->
-          <div class="item question-screen q-results">
+          <!-- <div class="item question-screen q-results">
             <h2 class="main-question aqua">Full Results</h2>
         
           <div class="middle-max">
@@ -66,10 +66,10 @@
             </div>
 
           </div>
-
+ -->
         
         <!-- quick result -->
-          <div class="item question-screen q-results">
+          <!-- <div class="item question-screen q-results">
             <h2 class="main-question aqua">Quick Results</h2>
         
           <div class="middle-max">
@@ -120,7 +120,7 @@
             </div>
             </div>
 
-          </div>
+          </div> -->
           
 
 
@@ -129,22 +129,27 @@
 
 
            <!-- standard question -->
-          <div class="item question-screen">
-            <h2 class="main-question aqua">In the past year, how often have you used the following?</h2>
-            
-            <div class="sub-question">
-                <h3>Alcohol (For men, 5 or more drinks a day. For women, 4 or more drinks a day)</h3>
+          <div class="item question-screen" ng-repeat="item in questions">
+            <h2 class="main-question aqua">{{item.description}}!!!!!</h2>
+
+            <div class="sub-question" ng-repeat="sub_question in item.sub_questions">
+                <h3>{{sub_question.name}} {{sub_question.description !== undefined ? "(" + sub_question.description + ")" : '' }}</h3>
                 <ul class="responses q1">
-                    <li class="selected">Never</li>
-                    <li>Once or Twice</li>
-                    <li>Monthly</li>
-                    <li>Weekly</li>
-                    <li class="last">Daily or almost daily</li>
+                    <li ng-repeat="option in item.options" | orderBy : 'option_value'>{{option.name}}</li>
                 </ul>
             </div>
 
 
-            <div class="sub-question">
+
+            <div class="sub-question" ng-if="item.sub_questions.length==0">
+                <h3>{{sub_question.name}} {{sub_question.description !== undefined ? "(" + sub_question.description + ")" : '' }}</h3>
+                <ul class="responses q1">
+                    <li ng-repeat="option in item.options" | orderBy : 'option_value'>{{option.name}}</li>
+                </ul>
+            </div>
+
+
+            <!-- <div class="sub-question">
                   <h3>Tobacco Products</h3>
                   <ul class="responses q1">
                       <li>Never</li>
@@ -176,7 +181,7 @@
                       <li>Weekly</li>
                       <li class="last">Daily or almost daily</li>
                   </ul>
-              </div>
+              </div> -->
 
           </div>
 

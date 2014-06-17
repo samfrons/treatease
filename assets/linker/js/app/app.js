@@ -7,8 +7,13 @@ angular.module('treateaseApp', ['ngRoute', 'ngResource', 'ngCookies', 'ngSanitiz
   .constant('_', _)
   .constant('apiRoot', '/')
 
+
   // angular routing
   .config(['$routeProvider', '$httpProvider', '$locationProvider', function ($routeProvider, $httpProvider, $locationProvider) {
+    
+    $httpProvider.defaults.useXDomain = true;
+    $httpProvider.defaults.withCredentials = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
     //$locationProvider.html5Mode(true).hashPrefix('!');
     $routeProvider
       .when('/', {
@@ -18,7 +23,7 @@ angular.module('treateaseApp', ['ngRoute', 'ngResource', 'ngCookies', 'ngSanitiz
       })
       .when('/quiz', {
         templateUrl: '/partials/quiz.ejs',
-        controller: 'videoCtrl',
+        controller: 'quizCtrl',
         access: routingConfig.accessLevels.public
       })
       

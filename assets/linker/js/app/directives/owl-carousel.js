@@ -6,10 +6,17 @@ angular.module('treateaseApp').directive('owlcarousel',function($timeout){
         	$timeout(function(){
 		      	angular.element("#owl-demo").owlCarousel({
 	 
-				      navigation : true, // Show next and prev buttons
-				      slideSpeed : 300,
+				      navigation      : true, // Show next and prev buttons
+				      slideSpeed      : 300,
 				      paginationSpeed : 400,
-				      singleItem:true
+				      singleItem      : true,
+				      autoHeight      : true,
+				      mouseDrag       : false,
+				      touchDrag       : false,
+				      pagination      : false,
+				      rewindNav       : false,
+				      navigationText  : ["back","next"],
+
 				 
 				      // "singleItem:true" is a shortcut for:
 				      // items : 1, 
@@ -19,7 +26,7 @@ angular.module('treateaseApp').directive('owlcarousel',function($timeout){
 				      // itemsMobile : false
 			 
 			  	});
-			});  	
+			}, 1000);  	
 	    }
 	} 
 });
