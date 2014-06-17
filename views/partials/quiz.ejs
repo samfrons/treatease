@@ -135,7 +135,7 @@
             <div class="sub-question" ng-repeat="sub_question in item.sub_questions">
                 <h3>{{sub_question.name}} {{sub_question.description !== undefined ? "(" + sub_question.description + ")" : '' }}</h3>
                 <ul class="responses q1">
-                    <li ng-repeat="option in item.options" | orderBy : 'option_value'>{{option.name}}</li>
+                    <li ng-click="answer(option.option_value, option.question_id, option.option_id); setActive($index)" ng-repeat="option in item.options" | orderBy : 'option_value' ng-class="{selected: $index == activeIndex}">{{option.name}}</li>
                 </ul>
             </div>
 
@@ -144,51 +144,10 @@
             <div class="sub-question" ng-if="item.sub_questions.length==0">
                 <h3>{{sub_question.name}} {{sub_question.description !== undefined ? "(" + sub_question.description + ")" : '' }}</h3>
                 <ul class="responses q1">
-                    <li ng-repeat="option in item.options" | orderBy : 'option_value'>{{option.name}}</li>
+                    <li ng-click="answer(option.option_value, option.question_id, option.option_id); setActive(option.option_id)" ng-repeat="option in item.options" | orderBy : 'option_value' ng-class="{selected: $index == activeIndex}">{{option.name}}</li>
                 </ul>
             </div>
 
-
-            <!-- <div class="sub-question">
-                  <h3>Tobacco Products</h3>
-                  <ul class="responses q1">
-                      <li>Never</li>
-                      <li>Once or Twice</li>
-                      <li>Monthly</li>
-                      <li>Weekly</li>
-                      <li class="last">Daily or almost daily</li>
-                  </ul>
-              </div>
-
-            <div class="sub-question">
-                  <h3>Prescription Drugs for Non-Medical Reasons</h3>
-                  <ul class="responses q1">
-                      <li>Never</li>
-                      <li>Once or Twice</li>
-                      <li>Monthly</li>
-                      <li>Weekly</li>
-                      <li class="last">Daily or almost daily</li>
-                  </ul>
-              </div>
-
-
-              <div class="sub-question">
-                  <h3>Illegal Drugs</h3>
-                  <ul class="responses q1">
-                      <li>Never</li>
-                      <li>Once or Twice</li>
-                      <li>Monthly</li>
-                      <li>Weekly</li>
-                      <li class="last">Daily or almost daily</li>
-                  </ul>
-              </div> -->
-
-          </div>
-
-
-          <div class="item">
-            
-            
           </div>
         </div>
 

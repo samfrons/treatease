@@ -1,10 +1,11 @@
 'use strict';
 
 angular.module('treateaseApp')
-  .controller('quizCtrl', ['$scope', 'QuizResource', '$http',  function ($scope, QuizResource, $http) {
+  .controller('quizCtrl', ['$scope', '$http',  function ($scope, $http) {
     console.warn('quizCtrl works');
     $scope.apiKey = 's2pqimhzja';
     $scope.questions = [];
+    $scope.activeIndex = 0;
     get_token();
     function get_token() {
       $http.jsonp('http://www.drugabuse.gov/qm/get_token?key=' + $scope.apiKey + '&callback=JSON_CALLBACK')
@@ -33,11 +34,12 @@ angular.module('treateaseApp')
         })
     }
 
+    $scope.answer = function (optValue, questionId, optionId){
+      console.log('optValue, questionId, optionId', optValue, questionId, optionId);
+    }
 
 
-    // QuizResource.get_token({'key' : $scope.apiKey, 'callback' : 'JSON_CALLBACK'}).$promise
-    //   .then(function(response) {
-    //     console.log('response', response);
-    //   });
-
+    $scope.setActive = function (index) {    
+      $scope.activeIndex = index;
+    };
  }]) 
