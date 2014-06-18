@@ -26,10 +26,24 @@ angular.module('treateaseApp')
       $http.jsonp('http://www.drugabuse.gov/qm/get_all_questions?key=' + $scope.apiKey + '&callback=JSON_CALLBACK')
         .success(function (all_questions) {
           console.log('get_all_questions', all_questions);
+          $scope.questions = [];
+          $scope.lastIndex = 1;
           if(all_questions.status == 1) {
-            _.each(all_questions.questions, function(question, index){
-              $scope.questions[index] = question;
-            })
+          _.each(all_questions.questions, function(q, index){
+              // console.log('q', q);
+              _.each(q.sub_questions, function(sq){
+                sq.options = q.options;
+                sq.minOpt = sq.options[0].option_id;
+                _.each(sq.options, function(opt){
+                  if (opt.option_id < sq.minOpt) {
+                    sq.minOpt = opt.option_id;
+                  }
+                  sq.activeIndex = sq.question_id + "_" + sq.sub_question_id + "_" + sq.minOpt
+                })
+                console.log(sq);
+              })
+              $scope.questions.push(q);
+            });
           }
         })
     }
@@ -39,7 +53,13 @@ angular.module('treateaseApp')
     }
 
 
-    $scope.setActive = function (index) {    
-      $scope.activeIndex = index;
+    $scope.setActive = function (option, sub_question) {
+      // if(sub_question){
+        sub_question.activeIndex = sub_question.question_id + "_" + sub_question.sub_question_id + "_" + option.option_id;
+      // } else {
+        // sub_question.activeIndex = 0 + "_" + 9 + "_" + option.option_id;
+      // }   
+      // $scope.question_id = question_id;
+      // $scope.option_id   = option_id
     };
  }]) 
