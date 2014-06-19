@@ -13,7 +13,7 @@ angular.module('treateaseApp').directive('owlcarousel',function($timeout){
 				      autoHeight      : true,
 				      mouseDrag       : false,
 				      touchDrag       : false,
-				      pagination      : false,
+				      pagination      : true,
 				      rewindNav       : false,
 				      navigationText  : ["back","next"],
 

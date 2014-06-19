@@ -6,6 +6,7 @@ angular.module('treateaseApp')
     $scope.apiKey = 's2pqimhzja';
     $scope.questions = [];
     $scope.activeIndex = 0;
+    $scope.activeIndexSingle = 0;
     get_token();
     function get_token() {
       $http.jsonp('http://www.drugabuse.gov/qm/get_token?key=' + $scope.apiKey + '&callback=JSON_CALLBACK')
@@ -54,12 +55,10 @@ angular.module('treateaseApp')
 
 
     $scope.setActive = function (option, sub_question) {
-      // if(sub_question){
-        sub_question.activeIndex = sub_question.question_id + "_" + sub_question.sub_question_id + "_" + option.option_id;
-      // } else {
-        // sub_question.activeIndex = 0 + "_" + 9 + "_" + option.option_id;
-      // }   
-      // $scope.question_id = question_id;
-      // $scope.option_id   = option_id
+      sub_question.activeIndex = sub_question.question_id + "_" + sub_question.sub_question_id + "_" + option.option_id;
+    };
+
+    $scope.setActiveForSlideWithoutSubquestions = function (index) {
+      $scope.activeIndexSingle = index
     };
  }]) 
