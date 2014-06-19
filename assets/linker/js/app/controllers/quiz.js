@@ -1,12 +1,13 @@
 'use strict';
 
 angular.module('treateaseApp')
-  .controller('quizCtrl', ['$scope', '$http',  function ($scope, $http) {
+  .controller('quizCtrl', ['$scope', '$http', '$timeout',  function ($scope, $http, $timeout) {
     console.warn('quizCtrl works');
     $scope.apiKey = 's2pqimhzja';
     $scope.questions = [];
     $scope.activeIndex = 0;
     $scope.activeIndexSingle = 0;
+    $scope.defaultAnswers = [];
     get_token();
     function get_token() {
       $http.jsonp('http://www.drugabuse.gov/qm/get_token?key=' + $scope.apiKey + '&callback=JSON_CALLBACK')
@@ -41,16 +42,40 @@ angular.module('treateaseApp')
                   }
                   sq.activeIndex = sq.question_id + "_" + sq.sub_question_id + "_" + sq.minOpt
                 })
-                console.log(sq);
               })
               $scope.questions.push(q);
+              // console.log('$scope.questions', $scope.questions);
             });
           }
         })
     }
 
-    $scope.answer = function (optValue, questionId, optionId){
-      console.log('optValue, questionId, optionId', optValue, questionId, optionId);
+    //============================ $scope.optValue default
+    $timeout(function(){
+      _.each($scope.questions, function(question, index){
+        for ( var i = 0; i < question.sub_questions.length; i++) { 
+          $scope.defaultAnswers.push({
+            q_id     : index +1,
+            sq_id    : i + 1,
+            answer   : 0
+          })
+          // console.log('$scope.defaultAnswers[index]', $scope.defaultAnswers);
+        }
+      })
+    }, 1000)
+    //============================ $scope.optValue default
+
+
+
+    $scope.answer = function (optValue, questionId, subquestionId){
+      // $scope.optValue      = optValue;
+      // $scope.questionId    = questionId;
+      // $scope.subquestionId = subquestionId;
+
+      console.log('optValue, questionId, subquestionId', optValue, questionId, subquestionId);
+
+
+
     }
 
 

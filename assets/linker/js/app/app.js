@@ -1,7 +1,7 @@
 'use strict';
 /* globals _ */
 
-angular.module('treateaseApp', ['ngRoute', 'ngResource', 'ngCookies', 'ngSanitize'])
+angular.module('treateaseApp', ['ngRoute', 'ngResource', 'ngCookies', 'ngSanitize', 'ui.bootstrap'])
 
   // grab lodash/underscore into an injectable constant
   .constant('_', _)
