@@ -12,13 +12,13 @@ angular.module('treateaseApp')
     function get_token() {
       $http.jsonp('http://www.drugabuse.gov/qm/get_token?key=' + $scope.apiKey + '&callback=JSON_CALLBACK')
         .success(function (data) {
-        console.log('get_token', data);
+        // console.log('get_token', data);
         if(data.status == 1) {
-          console.log('get_token status 1');
+          // console.log('get_token status 1');
           $scope.token_id = data.token_id;
           get_all_questions();
         } else {
-          console.log('get_token status 0');
+          // console.log('get_token status 0');
           $scope.errorMessage = 'Unexpected error.'
         }
      })  
@@ -40,6 +40,7 @@ angular.module('treateaseApp')
                   if (opt.option_id < sq.minOpt) {
                     sq.minOpt = opt.option_id;
                   }
+                  sq.answer = opt.option_value;
                   sq.activeIndex = sq.question_id + "_" + sq.sub_question_id + "_" + sq.minOpt
                 })
               })
@@ -51,28 +52,30 @@ angular.module('treateaseApp')
     }
 
     //============================ $scope.optValue default
-    $timeout(function(){
-      _.each($scope.questions, function(question, index){
-        for ( var i = 0; i < question.sub_questions.length; i++) { 
-          $scope.defaultAnswers.push({
-            q_id     : index +1,
-            sq_id    : i + 1,
-            answer   : 0
-          })
-          // console.log('$scope.defaultAnswers[index]', $scope.defaultAnswers);
-        }
-      })
-    }, 1000)
+    // $timeout(function(){
+    //   _.each($scope.questions, function(question, index){
+    //     for ( var i = 0; i < question.sub_questions.length; i++) { 
+    //       $scope.defaultAnswers.push({
+    //         q_id     : index +1,
+    //         sq_id    : i + 1,
+    //         answer   : 0
+    //       })
+    //       // console.log('$scope.defaultAnswers[index]', $scope.defaultAnswers);
+    //     }
+    //   })
+    // }, 1000)
     //============================ $scope.optValue default
 
 
 
-    $scope.answer = function (optValue, questionId, subquestionId){
+    $scope.answer = function (sq, optvalue){
+      sq.answer = optvalue;
+      console.log('QUESTIONS', $scope.questions);
       // $scope.optValue      = optValue;
       // $scope.questionId    = questionId;
       // $scope.subquestionId = subquestionId;
 
-      console.log('optValue, questionId, subquestionId', optValue, questionId, subquestionId);
+      // console.log('optValue, questionId, subquestionId', optValue, questionId, subquestionId);
 
 
 

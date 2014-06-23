@@ -135,7 +135,7 @@
             <div class="sub-question" ng-repeat="sub_question in item.sub_questions">
                 <h3>{{sub_question.name}} {{sub_question.description !== undefined ? "(" + sub_question.description + ")" : '' + sub_question.minOpt }}</h3>
                 <ul class="responses q1">
-                    <li ng-click="answer(option.option_value, option.question_id, sub_question.sub_question_id); setActive(option, sub_question)" ng-repeat="option in sub_question.options | orderBy : 'option_id'"  ng-class="{selected: sub_question.activeIndex == (sub_question.question_id + '_' + sub_question.sub_question_id + '_' + option.option_id) }">{{ option.name }}</li>
+                    <li ng-click="answer(sub_question, option.option_value); setActive(option, sub_question)" ng-repeat="option in sub_question.options | orderBy : 'option_id'"  ng-class="{selected: sub_question.activeIndex == (sub_question.question_id + '_' + sub_question.sub_question_id + '_' + option.option_id) }">{{ option.name }}</li>
                 </ul>
             </div>
 
@@ -144,7 +144,7 @@
             <div class="sub-question" ng-if="item.sub_questions.length==0">
                 <h3>{{sub_question.name}} {{sub_question.description !== undefined ? "(" + sub_question.description + ")" : '' }}</h3>
                 <ul class="responses q1">
-                    <li ng-click="answer(); setActiveForSlideWithoutSubquestions($index)" ng-repeat="option in item.options | orderBy : 'option_id'"  ng-class="{selected: $index == activeIndexSingle}">{{option.name}}</li>
+                    <li ng-click="answer(option.option_value); setActiveForSlideWithoutSubquestions($index)" ng-repeat="option in item.options | orderBy : 'option_id'"  ng-class="{selected: $index == activeIndexSingle}">{{option.name}}</li>
                 </ul>
             </div>
 
@@ -155,15 +155,36 @@
 
 <div>
     <script type="text/ng-template" id="myModalContent.html">
-        <div class="modal-header">
-            <h3 class="modal-title">Quick result {{slideNumber}} slide  !</h3>
-        </div>
-        <div class="modal-body">
-            will be here
-        </div>
-        <div class="modal-footer">
-            <button class="btn btn-primary" ng-click="ok()">OK</button>
-            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
-        </div>
+            <h2 class="main-question aqua">Quick Results {{slideNumber}} slide</h2>
+            <div class="middle-max" ng-repeat="result in quickResults">
+              {{result.message}}
+              <br>
+              <a href="{{result.more_info_link}}">{{result.more_info_text}}</a>
+              <div class="substance sub-question" ng-if="result.message">
+                <h4>Illegal/prescription drugs</h4>
+                <p>Binge drinking regularly incidcates that something might be wrong. Please continue</p>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default">Find meeting</button>
+                  <button type="button" class="btn btn-default">Find specialist</button>
+                  <button type="button" class="btn btn-default">Find rehab</button>
+                  <button type="button" class="btn btn-default">Learn more</button>
+                </div>
+            
+                <hr>
+                <div class="plan" ng-if="result.message">
+                  <div class="dmbutton">
+                    Start recommended treatment
+                  </div>
+                  <br>
+
+                  <div class="dmbutton" ng-if="result.message">
+                    Continue Evaluation
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+
+          <div class="modal-owl-next" ng-click="cancel()">next</div>
     </script>
 </div>
