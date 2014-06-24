@@ -32,7 +32,10 @@ angular.module('treateaseApp').directive('owlcarousel',function($timeout, $rootS
 			  	});
 			}, 1000);  	
 
-
+        	angular.element(".owl-next").click(function(){
+			    owl.trigger('owl.next');
+			    alert('next!!!')
+			  })
 
 			function beforeMove(){
 				console.log('beforeMove', $rootScope);
@@ -115,7 +118,7 @@ angular.module('treateaseApp').directive('owlcarousel',function($timeout, $rootS
 				};
 
 
-				if($rootScope.quickResults.length > 0){
+				if($rootScope.quickResults.length > 0 && "owl.next"){
    					scope.open();
 				}
 
