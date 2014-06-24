@@ -1,5 +1,5 @@
 <section class="quiz">
-        <div id="owl-demo" class="owl-carousel owl-theme" owlcarousel>
+  <div id="owl-demo" class="owl-carousel owl-theme" owlcarousel>
          
          <!-- full result -->
           <!-- <div class="item question-screen q-results">
@@ -128,63 +128,118 @@
           
 
 
-           <!-- standard question -->
-          <div class="item question-screen" ng-repeat="item in questions">
-            <h2 class="main-question aqua">{{item.description}}</h2>
+    <!-- standard question -->
+    <div class="item question-screen" ng-repeat="item in questions">
+      <h2 class="main-question aqua">{{item.description}}</h2>
 
-            <div class="sub-question" ng-repeat="sub_question in item.sub_questions">
-                <h3>{{sub_question.name}} {{sub_question.description !== undefined ? "(" + sub_question.description + ")" : '' + sub_question.minOpt }}</h3>
-                <ul class="responses q1">
-                    <li ng-click="answer(sub_question, option.option_value); setActive(option, sub_question)" ng-repeat="option in sub_question.options | orderBy : 'option_id'"  ng-class="{selected: sub_question.activeIndex == (sub_question.question_id + '_' + sub_question.sub_question_id + '_' + option.option_id) }">{{ option.name }}</li>
-                </ul>
-            </div>
+      <div class="sub-question" ng-repeat="sub_question in item.sub_questions">
+          <h3>{{sub_question.name}} {{sub_question.description !== undefined ? "(" + sub_question.description + ")" : '' + sub_question.minOpt }}</h3>
+          <ul class="responses q1">
+              <li ng-click="answer(sub_question, option.option_value); setActive(option, sub_question)" ng-repeat="option in sub_question.options | orderBy : 'option_id'"  ng-class="{selected: sub_question.activeIndex == (sub_question.question_id + '_' + sub_question.sub_question_id + '_' + option.option_id) }">{{ option.name }}</li>
+          </ul>
+      </div>
 
 
 
-            <div class="sub-question" ng-if="item.sub_questions.length==0">
-                <h3>{{sub_question.name}} {{sub_question.description !== undefined ? "(" + sub_question.description + ")" : '' }}</h3>
-                <ul class="responses q1">
-                    <li ng-click="answer(option.option_value); setActiveForSlideWithoutSubquestions($index)" ng-repeat="option in item.options | orderBy : 'option_id'"  ng-class="{selected: $index == activeIndexSingle}">{{option.name}}</li>
-                </ul>
-            </div>
+      <div class="sub-question" ng-if="item.sub_questions.length==0">
+          <h3>{{sub_question.name}} {{sub_question.description !== undefined ? "(" + sub_question.description + ")" : '' }}</h3>
+          <ul class="responses q1">
+              <li ng-click="answer(option.option_value); setActiveForSlideWithoutSubquestions($index)" ng-repeat="option in item.options | orderBy : 'option_id'"  ng-class="{selected: $index == activeIndexSingle}">{{option.name}}</li>
+          </ul>
+      </div>
+    </div>
+    <!--Standart question end -->
 
-          </div>
+    
+    <!--Full result -->
+    <div class="item question-screen q-results" ng-show="resultsCanBeLoaded">
+      <h2 class="main-question aqua">Full Results</h2>
+      <div class="substance sub-question">
+        <h4>Heavy Drinking <span class="level high">High<span class="ratio">31/40</span></span></h4>
+        <h3 class="rec high">Get immediate support</h3>
+        <p>Binge drinking regularly incidcates that something might be wrong. Please continue</p>
+        <div class="btn-group">
+          <button type="button" class="btn btn-default">Find meeting</button>
+          <button type="button" class="btn btn-default">Find specialist</button>
+          <button type="button" class="btn btn-default">Find rehab</button>
+          <button type="button" class="btn btn-default">Learn more</button>
         </div>
-  </section>
+      </div>
+      <hr>
+
+      <div class="substance sub-question">
+        <h4>Tobacco<span class="level moderate">Moderate<span class="ratio">21/40</span></span></h4>
+        <h3 class="rec moderate">Consider continual support</h3>
+        <p>Binge drinking regularly incidcates that something might be wrong. Please continue</p>
+        <div class="btn-group">
+          <button type="button" class="btn btn-default">Find meeting</button>
+          <button type="button" class="btn btn-default">Find specialist</button>
+          <button type="button" class="btn btn-default">Find rehab</button>
+          <button type="button" class="btn btn-default">Learn more</button>
+        </div>
+      </div>
+      <hr>
+
+      <div class="substance sub-question">
+        <h4>Illegal/prescription drugs<span class="level low">Low<span class="ratio">1/40</span></span></h4>
+        <h3 class="rec low">Good work! Keep yourself in check.</h3>
+        <p>Binge drinking regularly incidcates that something might be wrong. Please continue</p>
+        <div class="btn-group">
+          <button type="button" class="btn btn-default">Find meeting</button>
+          <button type="button" class="btn btn-default">Find specialist</button>
+          <button type="button" class="btn btn-default">Find rehab</button>
+          <button type="button" class="btn btn-default">Learn more</button>
+        </div>
+      </div>
+      <hr>
+
+      <div class="substance sub-question">
+        <h4 class="rec test">Recommended testing<span class="fa fa-heart"></span></h4>
+        <div class="btn-group">
+          <button type="button" class="btn btn-default">HIV</button>
+          <button type="button" class="btn btn-default">Hepatitis B &amp; C</button>
+        </div>
+      </div>
+      <hr>
+
+      <div class="plan">
+        <div class="dmbutton">
+          Make your treatment plan
+        </div>
+      </div>
+    </div>
+  </div>  
+</section>
 
 
-<div>
-    <script type="text/ng-template" id="myModalContent.html">
-            <h2 class="main-question aqua">Quick Results {{slideNumber}} slide</h2>
-            <div class="middle-max" ng-repeat="result in quickResults">
-              {{result.message}}
-              <br>
-              <a href="{{result.more_info_link}}">{{result.more_info_text}}</a>
-              <div class="substance sub-question" ng-if="result.message">
-                <h4>Illegal/prescription drugs</h4>
-                <p>Binge drinking regularly incidcates that something might be wrong. Please continue</p>
-                <div class="btn-group">
-                  <button type="button" class="btn btn-default">Find meeting</button>
-                  <button type="button" class="btn btn-default">Find specialist</button>
-                  <button type="button" class="btn btn-default">Find rehab</button>
-                  <button type="button" class="btn btn-default">Learn more</button>
-                </div>
-            
-                <hr>
-                <div class="plan" ng-if="result.message">
-                  <div class="dmbutton">
-                    Start recommended treatment
-                  </div>
-                  <br>
+<script type="text/ng-template" id="myModalContent.html">
+  <h2 class="main-question aqua">Quick Results {{slideNumber}} slide</h2>
+  <div class="middle-max" ng-repeat="result in quickResults">
+    <div ng-if="result.message">
+      {{result.message}}
+      <a href="{{result.more_info_link}}">{{result.more_info_text}}</a>
+      <hr ng-if="result.message">
+    </div>
+  </div>
+  
+  <div class="substance sub-question">
+    <div class="btn-group">
+      <button type="button" class="btn btn-default">Find meeting</button>
+      <button type="button" class="btn btn-default">Find specialist</button>
+      <button type="button" class="btn btn-default">Find rehab</button>
+      <button type="button" class="btn btn-default">Learn more</button>
+    </div>
 
-                  <div class="dmbutton" ng-if="result.message">
-                    Continue Evaluation
-                  </div>
-                </div>
-              </div>
-            </div>
-            
+    <div class="plan">
+      <div class="dmbutton">
+        Start recommended treatment
+      </div>
+      <br>
 
-          <div class="modal-owl-next" ng-click="cancel()">next</div>
-    </script>
-</div>
+      <div class="dmbutton">
+        Continue Evaluation
+      </div>
+    </div>
+  </div>
+  <div class="modal-owl-next" ng-click="cancel()">next</div>
+</script>

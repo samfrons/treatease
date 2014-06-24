@@ -35,6 +35,7 @@ angular.module('treateaseApp').directive('owlcarousel',function($timeout, $rootS
 
 			function beforeMove(){
 				console.log('beforeMove', scope);
+				$rootScope.resultsCanBeLoaded = true;
 			    $rootScope.slideNumber = this.owl.currentItem // current slide from 0 to N-1
 
 				scope.countResult = function ($scope) {
@@ -56,17 +57,17 @@ angular.module('treateaseApp').directive('owlcarousel',function($timeout, $rootS
 						console.log('Parsed?', $scope.leftOperand, $scope.rightOperand);
 						if(rule.operator === ">") {
 							if($scope.leftOperand > $scope.rightOperand) {
-								$scope.quickResults.push(rule.success)
+								if(rule.success.message) $scope.quickResults.push(rule.success)
 								console.log('$scope.quickResults', $scope.quickResults);
 							}
 						} else if (rule.operator === "<") {
 							if($scope.leftOperand < $scope.rightOperand) {
-								$scope.quickResults.push(rule.success)
+								if(rule.success.message) $scope.quickResults.push(rule.success)
 								console.log('$scope.quickResults', $scope.quickResults);
 							}
 						} else if ( rule.operator === "==") {
 							if($scope.leftOperand == $scope.rightOperand) {
-								$scope.quickResults.push(rule.success)
+								if(rule.success.message) $scope.quickResults.push(rule.success)
 								console.log('$scope.quickResults', $scope.quickResults);
 							}
 						}
@@ -107,7 +108,7 @@ angular.module('treateaseApp').directive('owlcarousel',function($timeout, $rootS
 				};
 
 
-				if($rootScope.quickResults[0].message){
+				if($rootScope.quickResults.length > 0){
    					scope.open();
 				}
 

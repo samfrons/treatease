@@ -1,13 +1,14 @@
 'use strict';
 
 angular.module('treateaseApp')
-  .controller('quizCtrl', ['$scope', '$http', '$timeout',  function ($scope, $http, $timeout) {
+  .controller('quizCtrl', ['$scope', '$rootScope', '$http', '$timeout',  function ($scope, $rootScope, $http, $timeout) {
     console.warn('quizCtrl works');
     $scope.apiKey = 's2pqimhzja';
     $scope.questions = [];
     $scope.activeIndex = 0;
     $scope.activeIndexSingle = 0;
     $scope.defaultAnswers = [];
+    $rootScope.resultsCanBeLoaded = false;
     get_token();
     function get_token() {
       $http.jsonp('http://www.drugabuse.gov/qm/get_token?key=' + $scope.apiKey + '&callback=JSON_CALLBACK')
