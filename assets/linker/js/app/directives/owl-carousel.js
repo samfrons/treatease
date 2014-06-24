@@ -15,7 +15,7 @@ angular.module('treateaseApp').directive('owlcarousel',function($timeout, $rootS
 				      autoHeight      : true,
 				      mouseDrag       : false,
 				      touchDrag       : false,
-				      pagination      : true,
+				      pagination      : false,
 				      rewindNav       : false,
 				      navigationText  : ["back","next"],
 				      beforeMove     : beforeMove

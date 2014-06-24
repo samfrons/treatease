@@ -42,6 +42,7 @@ angular.module('treateaseApp')
                     sq.minOpt = opt.option_id;
                   }
                   sq.answer = opt.option_value;
+                  sq.answerId = opt.option_id;
                   sq.activeIndex = sq.question_id + "_" + sq.sub_question_id + "_" + sq.minOpt
                 })
               })
@@ -52,31 +53,42 @@ angular.module('treateaseApp')
         })
     }
 
-    //============================ $scope.optValue default
-    // $timeout(function(){
-    //   _.each($scope.questions, function(question, index){
-    //     for ( var i = 0; i < question.sub_questions.length; i++) { 
-    //       $scope.defaultAnswers.push({
-    //         q_id     : index +1,
-    //         sq_id    : i + 1,
-    //         answer   : 0
-    //       })
-    //       // console.log('$scope.defaultAnswers[index]', $scope.defaultAnswers);
-    //     }
-    //   })
-    // }, 1000)
-    //============================ $scope.optValue default
 
 
 
-    $scope.answer = function (sq, optvalue){
+    $scope.answer = function (sq, optvalue, optId){
       sq.answer = optvalue;
-      console.log('QUESTIONS', $scope.questions);
-      // $scope.optValue      = optValue;
-      // $scope.questionId    = questionId;
-      // $scope.subquestionId = subquestionId;
+      sq.answerId = optId;
+      console.log('QUESTIONS, $scope.questions[$rootScope.slideNumber]', $scope.questions, $scope.questions[$rootScope.slideNumber]);
+      _.each($scope.questions, function(question, q_index){
+        $scope.submitAnswer = {
+          "key": $scope.apiKey,
+          "token_id": $scope.token_id,
+          "question_id": q_index + 1,
+          "answers": [
+            {
+              "sub_question_id": "1",
+              // "option_id": $scope.questions[$rootScope.slideNumber].sub_questions[0].answerId
+            },{
+              "sub_question_id": "2",
+              // "option_id": $scope.questions[$rootScope.slideNumber].sub_questions[1].answerId
+            },{
+              "sub_question_id": "3",
+              // "option_id": $scope.questions[$rootScope.slideNumber].sub_questions[2].answerId
+            },{
+              "sub_question_id": "4",
+              // "option_id": $scope.questions[$rootScope.slideNumber].sub_questions[3].answerId
+            },{
+              "sub_question_id": "5",
+              // "option_id": $scope.questions[$rootScope.slideNumber].sub_questions[4].answerId
+            },
+            
+          ]
+        };
 
-      // console.log('optValue, questionId, subquestionId', optValue, questionId, subquestionId);
+      })
+
+      console.log($scope.submitAnswer);
 
 
 

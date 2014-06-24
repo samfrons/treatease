@@ -130,12 +130,14 @@
 
     <!-- standard question -->
     <div class="item question-screen" ng-repeat="item in questions">
-      <h2 class="main-question aqua">{{item.description}}</h2>
+      <div class="question-title-block">
+        <h2 class="main-question aqua">{{item.description}}</h2>
+      </div>
 
       <div class="sub-question" ng-repeat="sub_question in item.sub_questions">
           <h3>{{sub_question.name}} {{sub_question.description !== undefined ? "(" + sub_question.description + ")" : '' + sub_question.minOpt }}</h3>
           <ul class="responses q1">
-              <li ng-click="answer(sub_question, option.option_value); setActive(option, sub_question)" ng-repeat="option in sub_question.options | orderBy : 'option_id'"  ng-class="{selected: sub_question.activeIndex == (sub_question.question_id + '_' + sub_question.sub_question_id + '_' + option.option_id) }">{{ option.name }}</li>
+              <li ng-click="answer(sub_question, option.option_value, option.option_id); setActive(option, sub_question)" ng-repeat="option in sub_question.options | orderBy : 'option_id'"  ng-class="{selected: sub_question.activeIndex == (sub_question.question_id + '_' + sub_question.sub_question_id + '_' + option.option_id) }">{{ option.name }}</li>
           </ul>
       </div>
 
@@ -153,7 +155,9 @@
     
     <!--Full result -->
     <div class="item question-screen q-results" ng-show="resultsCanBeLoaded">
-      <h2 class="main-question aqua">Full Results</h2>
+      <div class="question-title-block">
+        <h2 class="main-question aqua">Full Results</h2>
+      </div>
       <div class="substance sub-question">
         <h4>Heavy Drinking <span class="level high">High<span class="ratio">31/40</span></span></h4>
         <h3 class="rec high">Get immediate support</h3>
