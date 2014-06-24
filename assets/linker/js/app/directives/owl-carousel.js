@@ -5,6 +5,7 @@ angular.module('treateaseApp').directive('owlcarousel',function($timeout, $rootS
         link: function(scope, elem, attrs) {
         	console.log('scope, elem, attrs', scope, elem, attrs);
         	console.log('directive owlcarousel');
+		    $rootScope.quickResults = [];
         	$timeout(function(){
 		      	angular.element("#owl-demo").owlCarousel({
 	 
@@ -34,52 +35,57 @@ angular.module('treateaseApp').directive('owlcarousel',function($timeout, $rootS
 
 
 			function beforeMove(){
-				console.log('beforeMove', scope);
+				console.log('beforeMove', $rootScope);
 				$rootScope.resultsCanBeLoaded = true;
 			    $rootScope.slideNumber = this.owl.currentItem // current slide from 0 to N-1
+			    if($rootScope.quickResults.length === 0) {
+					scope.countResult = function ($scope) {
+						console.log('scope.questions[$rootScope.slideNumber]', scope.questions[$rootScope.slideNumber]);
+						if(scope.questions[$rootScope.slideNumber]) {
+							$scope.quickResults = [];
+						    _.each(scope.questions[$rootScope.slideNumber].rules, function(rule, index){
+							  	if(rule.left_operand === "q_sum_all") {
+							  		$scope.leftOperand = 0;
+							  		_.each(scope.questions[$rootScope.slideNumber].sub_questions, function(sub_q, sub_index){
+							  			console.log('$scope.leftOperand, sub_q.answer', $scope.leftOperand, sub_q.answer);
+							  			$scope.leftOperand = $scope.leftOperand + sub_q.answer
+							  			console.log("q_sum_all", $scope.leftOperand);
+							  		})
+							  	} else {
+							  		$scope.leftOperand = +scope.questions[$rootScope.slideNumber].sub_questions[index].answer;
+							  	}
 
-				scope.countResult = function ($scope) {
-					console.log('scope.questions[$rootScope.slideNumber]', scope.questions[$rootScope.slideNumber]);
-					$scope.quickResults = [];
-				    _.each(scope.questions[$rootScope.slideNumber].rules, function(rule, index){
-					  	if(rule.left_operand === "q_sum_all") {
-					  		$scope.leftOperand = 0;
-					  		_.each(scope.questions[$rootScope.slideNumber].sub_questions, function(sub_q, sub_index){
-					  			console.log('$scope.leftOperand, sub_q.answer', $scope.leftOperand, sub_q.answer);
-					  			$scope.leftOperand = $scope.leftOperand + sub_q.answer
-					  			console.log("q_sum_all", $scope.leftOperand);
-					  		})
-					  	} else {
-					  		$scope.leftOperand = +scope.questions[$rootScope.slideNumber].sub_questions[index].answer;
-					  	}
-
-						$scope.rightOperand  = +rule.right_operand
-						console.log('Parsed?', $scope.leftOperand, $scope.rightOperand);
-						if(rule.operator === ">") {
-							if($scope.leftOperand > $scope.rightOperand) {
-								if(rule.success.message) $scope.quickResults.push(rule.success)
-								console.log('$scope.quickResults', $scope.quickResults);
-							}
-						} else if (rule.operator === "<") {
-							if($scope.leftOperand < $scope.rightOperand) {
-								if(rule.success.message) $scope.quickResults.push(rule.success)
-								console.log('$scope.quickResults', $scope.quickResults);
-							}
-						} else if ( rule.operator === "==") {
-							if($scope.leftOperand == $scope.rightOperand) {
-								if(rule.success.message) $scope.quickResults.push(rule.success)
-								console.log('$scope.quickResults', $scope.quickResults);
-							}
+								$scope.rightOperand  = +rule.right_operand
+								console.log('Parsed?', $scope.leftOperand, $scope.rightOperand);
+								if(rule.operator === ">") {
+									if($scope.leftOperand > $scope.rightOperand) {
+										if(rule.success.message) $scope.quickResults.push(rule.success)
+										console.log('$scope.quickResults', $scope.quickResults);
+									}
+								} else if (rule.operator === "<") {
+									if($scope.leftOperand < $scope.rightOperand) {
+										if(rule.success.message) $scope.quickResults.push(rule.success)
+										console.log('$scope.quickResults', $scope.quickResults);
+									}
+								} else if ( rule.operator === "==") {
+									if($scope.leftOperand == $scope.rightOperand) {
+										if(rule.success.message) $scope.quickResults.push(rule.success)
+										console.log('$scope.quickResults', $scope.quickResults);
+									}
+								}
+							// if($scope.leftOperand + $scope.operator + $scope.rightOperand){
+							// 	console.log('success');
+							// } else {
+							// 	console.log('false');
+							// }
+							$rootScope.quickResults = $scope.quickResults;
+						  	})
 						}
-					// if($scope.leftOperand + $scope.operator + $scope.rightOperand){
-					// 	console.log('success');
-					// } else {
-					// 	console.log('false');
-					// }
-					$rootScope.quickResults = $scope.quickResults;
-				  	})
-				  	
-				}(scope)
+					  	
+					}(scope)
+			    } else {
+			    	$rootScope.quickResults = [];
+			    }
 
 
 				var ModalInstanceCtrl = function ($modalInstance, $scope) { //==================modal ctrl
@@ -103,7 +109,8 @@ angular.module('treateaseApp').directive('owlcarousel',function($timeout, $rootS
 
 				    modalInstance.result.then(function () {
 				    }, function () {
-				      console.log('Modal dismissed at: ' + new Date());
+				    	// $rootScope.quickResults = [];
+				      	console.log('Modal dismissed at: ' + new Date());
 				    });
 				};
 
