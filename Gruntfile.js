@@ -29,12 +29,14 @@ module.exports = function (grunt) {
    */
 
   var cssFilesToInject = [
-    // 'assets/css/**/*.css',
-    // 'css/**/*.css',
-    // 'layerslider/css/layerslider.css'
-
+    "css/font-awesome.css",
+    "css/bootstrap.css",
+    "css/style.css",
+    "css/colors/brown.css",
+    "layerslider/css/layerslider.css",
+    "css/quiz-style.css",
+    
   ];
-
 
   /**
    * Javascript files to inject in order
@@ -45,50 +47,33 @@ module.exports = function (grunt) {
    */
 
   var jsFilesToInject = [
-
-    // Bring in the socket.io client
-    'linker/js/socket.io.js',
-
-    // then beef it up with some convenience logic for talking to Sails.js
-    'linker/js/sails.io.js',
-
-    // A simpler boilerplate library for getting you up and running w/ an
-    // automatic listener for incoming messages from Socket.io.
-    'linker/js/app.js',
-    // Below, as a demonstration, you'll see the built-in dependencies
-    // linked in the proper order order
-
-
-    // *->    put other dependencies here   <-*
-
-    // lodash
-    'js/components/lodash/lodash.custom.js',
-    'js/components/lodash/lodash.js',
-//    'js/components/lodash/lodash.compat.js',
-
-    // angular
-    'js/components/angular/angular.js',
-    'js/components/angular/angular-cookies.js',
-    'js/components/angular/angular-resource.js',
-    'js/components/angular/angular-sanitize.js',
-    'js/components/angular/angular-route.js',
-    'js/components/custom_angular_bootstrap.js',
-    
-
-    // bower components
-    // 'js/components/angular-bootstrap/ui-bootstrap-tpls-0.6.0-SNAPSHOT.min.js',
-//    'js/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
-
-    // 'js/bower_components/angular-ui-utils/modules/showhide/showhide.js',
-    // 'js/bower_components/angular-ui-utils/modules/event/event.js',
-    // 'js/bower_components/angular-ui-utils/modules/keypress/keypress.js',
-    // 'js/bower_components/angular-ui-map/ui-map.js',   // for ui-map v 0.5
-    // 'js/bower_components/angular-ui-map/src/map.js',  // for ui-map v 0.4
-    // 'js/bower_components/angularytics/dist/angularytics.min.js',
-    // 'js/bower_components/angular-socket-io/socket.js',
-
-    // All of the rest of your app scripts imported here
-    'linker/**/*.js',
+     "js/jquery.js",
+     "js/bootstrap.min.js",
+     "js/jquery.unveilEffects.js",   
+     "js/retina-1.1.0.js",
+     "js/jquery.hoverdir.js",
+     "js/owl.carousel.js",  
+     "js/jetmenu.js",   
+     "js/jquery.hoverex.min.js",
+     "js/jquery.prettyPhoto.js",
+     "js/jquery.isotope.min.js",
+     "js/custom.js",
+     "/linker/js/socket.io.js",
+     "/linker/js/sails.io.js",
+     "/linker/js/app.js",
+     "/js/components/lodash/lodash.custom.js",
+     "/js/components/lodash/lodash.js",
+     "/js/components/angular/angular.js",
+     "/js/components/angular/angular-cookies.js",
+     "/js/components/angular/angular-resource.js",
+     "/js/components/angular/angular-sanitize.js",
+     "/js/components/angular/angular-route.js",
+     "/js/components/custom_angular_bootstrap.js",
+     "/linker/js/app/app.js",
+     "/linker/js/app/controllers/quiz.js",
+     "/linker/js/app/controllers/video.js",
+     "/linker/js/app/directives/owl-carousel.js",
+     "/linker/js/routingConfig.js",
   ];
 
 
@@ -205,87 +190,11 @@ module.exports = function (grunt) {
           }
         ]
       },
-      
-      // TODO: CHANGE this to smth another
-      fontawesome: {
-        files: [ {
-            expand : true,
-            cwd    : './assets/linker/styles/fontawesome/font/',
-            src    : ['*.*'],
-            dest   : '.tmp/public/font/'
-          }
-        ]
-      },      
-      bootstrap: {
-        files: [ {
-            expand : true,
-            cwd    : './assets/linker/styles/bootstrap/fonts/',
-            src    : ['*.*'],
-            dest   : '.tmp/public/fonts/'
-          }
-        ]
-      },
-      // end TODO
-
-      build: {
-        files: [
-          {
-            expand: true,
-            cwd: '.tmp/public',
-            src: ['**/*'],
-            dest: '.tmp'
-          }
-        ]
-      },
-      wwwToTmp: {
-        files: [
-          {
-            expand: true,
-            cwd: 'www',
-            src: ['**/*'],
-            dest: '.tmp/public'
-          }
-        ]
-      }
     },
 
     clean: {
       dev: ['.tmp/**'],
-      build: ['www'],
       sources:['.tmp/public/concat', '.tmp/public/linker', '.tmp/public/js/**']
-    },
-
-    jst: {
-      dev: {
-        options: {
-          templateSettings: {
-            interpolate: /\{\{(.+?)\}\}/g
-          }
-        },
-        files: {
-          '.tmp/public/jst.js': templateFilesToInject
-        }
-      }
-    },
-
-    less: {
-      dev: {
-        files: [
-          {
-            expand: true,
-            cwd: 'assets/styles/',
-            src: ['*.less'],
-            dest: '.tmp/public/styles/',
-            ext: '.css'
-          }, {
-            expand: true,
-            cwd: 'assets/linker/styles/',
-            src: ['*.less'],
-            dest: '.tmp/public/linker/styles/',
-            ext: '.css'
-          }
-        ]
-      }
     },
 
     concat: {
@@ -316,25 +225,6 @@ module.exports = function (grunt) {
       }
     },
 
-    compass: {
-      dev: {
-        options: {
-          sassDir: 'assets/linker/styles',
-          cssDir: '.tmp/public/linker/styles',
-          generatedImagesDir: '.tmp/public/linker/images/generated',
-          imagesDir: 'assets/linker/images',
-          javascriptsDir: 'assets/linker/js',
-          fontsDir: 'assets/linker/styles/fonts',
-          importPath: 'assets/js/bower_components',
-          httpImagesPath: '/linker/images',
-          httpGeneratedImagesPath: '/linker/images/generated',
-          httpFontsPath: '/linker/styles/fonts',
-          relativeAssets: false,
-          debugInfo: true
-        }
-      }
-    },
-
     'sails-linker': {
 
       devJs: {
@@ -359,8 +249,8 @@ module.exports = function (grunt) {
           appRoot: '.tmp/public'
         },
         files: {
-          '.tmp/public/**/*.html': ['.tmp/public/min/production.js'],
-          'views/**/*.html': ['.tmp/public/min/production.js'],
+          // '.tmp/public/**/*.html': ['.tmp/public/min/production.js'],
+          // 'views/**/*.html': ['.tmp/public/min/production.js'],
           'views/**/*.ejs': ['.tmp/public/min/production.js']
         }
       },
@@ -409,77 +299,7 @@ module.exports = function (grunt) {
           'views/**/*.ejs': ['.tmp/public/jst.js']
         }
       },
-
-
-      /*******************************************
-       * Jade linkers (TODO: clean this up)
-       *******************************************/
-
-      devJsJADE: {
-        options: {
-          startTag: '// SCRIPTS',
-          endTag: '// SCRIPTS END',
-          fileTmpl: 'script(type="text/javascript", src="%s")',
-          appRoot: '.tmp/public'
-        },
-        files: {
-          'views/**/*.jade': jsFilesToInject
-        }
-      },
-
-      prodJsJADE: {
-        options: {
-          startTag: '// SCRIPTS',
-          endTag: '// SCRIPTS END',
-          fileTmpl: 'script(type="text/javascript", src="%s")',
-          appRoot: '.tmp/public'
-        },
-        files: {
-          'views/**/*.jade': ['.tmp/public/min/production.js']
-        }
-      },
-
-      devStylesJADE: {
-        options: {
-          startTag: '// STYLES',
-          endTag: '// STYLES END',
-          fileTmpl: 'link(rel="stylesheet", href="%s")',
-          appRoot: '.tmp/public'
-        },
-        files: {
-          'views/**/*.jade': cssFilesToInject
-        }
-      },
-
-      prodStylesJADE: {
-        options: {
-          startTag: '// STYLES',
-          endTag: '// STYLES END',
-          fileTmpl: 'link(rel="stylesheet", href="%s")',
-          appRoot: '.tmp/public'
-        },
-        files: {
-          'views/**/*.jade': ['.tmp/public/min/production.css']
-        }
-      },
-
-      // Bring in JST template object
-      devTplJADE: {
-        options: {
-          startTag: '// TEMPLATES',
-          endTag: '// TEMPLATES END',
-          fileTmpl: 'script(type="text/javascript", src="%s")',
-          appRoot: '.tmp/public'
-        },
-        files: {
-          'views/**/*.jade': ['.tmp/public/jst.js']
-        }
-      }
-      /************************************
-       * Jade linker end
-       ************************************/
     },
-
     watch: {
       api: {
         // API files to watch:
@@ -501,7 +321,7 @@ module.exports = function (grunt) {
           'logger:watch_assets:timer', 'logger:Ready To Go:beep'
         ]
       }
-    }
+    },
   });
 
   var moment = require('moment');
@@ -525,32 +345,22 @@ module.exports = function (grunt) {
   // When Sails is lifted:
   grunt.registerTask('default', [
     'clean:dev',
-    'compass:dev',
-    'compileAssets',
+    'copy:dev',
+    'concat',
     'linkAssets',
-    // 'copy:build',
     'logger:Ready To Go:beep',
     'watch:assets'
   ]);
-//  grunt.registerTask('default', [
-//    'sails-linker:prodJs',
-//    'sails-linker:prodStyles',
-//    'sails-linker:devTpl',
-////    'compileAssets',
-////    'linkAssets',
-//    'logger:Ready To Go:beep',
-////    'watch:assets'
-//  ]);
 
-  grunt.registerTask('compileAssets', [
-    'timer:compileAssets',
-    'timer:clean_dev', 'clean:dev', 'logger:clean_dev:timer',
-    'jst:dev',
-//    'less:dev',
-    'timer:compass_dev', 'compass:dev', 'logger:compass_dev:timer',
-    'timer:copy_dev', 'copy:dev', 'logger:copy_dev:timer',
-    'logger:compileAssets:timer:~~'
-  ]);
+//   grunt.registerTask('compileAssets', [
+//     'timer:compileAssets',
+//     'timer:clean_dev', 'clean:dev', 'logger:clean_dev:timer',
+//     'jst:dev',
+// //    'less:dev',
+//     'timer:compass_dev', 'compass:dev', 'logger:compass_dev:timer',
+//     'timer:copy_dev', 'copy:dev', 'logger:copy_dev:timer',
+//     'logger:compileAssets:timer:~~'
+//   ]);
 
   grunt.registerTask('linkAssets', [
     'timer:linkAssets',
@@ -558,9 +368,6 @@ module.exports = function (grunt) {
     'sails-linker:devJs',
     'sails-linker:devStyles',
     'sails-linker:devTpl',
-//    'sails-linker:devJsJADE',
-//    'sails-linker:devStylesJADE',
-//    'sails-linker:devTplJADE'
     'logger:linkAssets:timer:~~'
 
   ]);
@@ -568,33 +375,17 @@ module.exports = function (grunt) {
 
   // Build the assets into a web accessible folder.
   // (handy for phone gap apps, chrome extensions, etc.)
-  grunt.registerTask('build', [
-    'compileAssets',
-    'linkAssets',
-    'clean:build',
-    // 'copy:build'
-  ]);
   grunt.registerTask('build-deploy', [
     'clean:dev', //clean tmp
-    'jst:dev',
-//    'less:dev',
-    'compass:dev',
     'copy:dev',
-    'copy:fontawesome',
-    'copy:bootstrap',
     'concat',
     'uglify',
     'cssmin',
     'sails-linker:prodJs',
     'sails-linker:prodStyles',
     'sails-linker:devTpl',
-//      'sails-linker:prodJsJADE',
-//      'sails-linker:prodStylesJADE',
-//      'sails-linker:devTplJADE'
 
-    // 'copy:build',
-    'clean:build', //clean www
-    'clean:sources' //clean concat and linker from .tmp/public
+    // 'clean:sources' //clean concat and linker from .tmp/public
     // 'clean:dev'
   ]);
 
@@ -625,19 +416,16 @@ module.exports = function (grunt) {
 //  When sails is lifted in production
   grunt.registerTask('prod', [
     'logger:starting prod',
-    //'clean:dev',
-    // 'logger:copying wwwToTmp',
-    //'copy:wwwToTmp',
-    'logger:finished grunt'
-  ]);
+    'logger:starting prod',
+    'logger:starting prod',
+    'logger:starting prod',
+    // //'clean:dev',
+    // // 'logger:copying wwwToTmp',
+    // //'copy:wwwToTmp',
+    // 'logger:finished grunt'
 
 
-
-  grunt.registerTask('prod-old', [
-    'clean:dev',
-    'jst:dev',
-//    'less:dev',
-    'compass:dev',
+    'clean:dev', //clean tmp
     'copy:dev',
     'concat',
     'uglify',
@@ -645,21 +433,10 @@ module.exports = function (grunt) {
     'sails-linker:prodJs',
     'sails-linker:prodStyles',
     'sails-linker:devTpl',
+
+    // 'clean:sources', //clean concat and linker from .tmp/public
+    // 'clean:dev'
+    'logger:Ready To Go',
   ]);
 
-//  // When API files are changed:
-//  grunt.event.on('watch', function(action, filepath) {
-//    grunt.log.writeln(filepath + ' has ' + action);
-//
-//    // Send a request to a development-only endpoint on the server
-//    // which will reuptake the file that was changed.
-//    var baseurl = grunt.option('baseurl');
-//    var gruntSignalRoute = grunt.option('signalpath');
-//    var url = baseurl + gruntSignalRoute + '?action=' + action + '&filepath=' + filepath;
-//
-//    require('http').get(url)
-//      .on('error', function(e) {
-//        console.error(filepath + ' has ' + action + ', but could not signal the Sails.js server: ' + e.message);
-//      });
-//  });
 };

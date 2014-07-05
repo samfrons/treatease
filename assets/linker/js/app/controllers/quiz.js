@@ -28,7 +28,7 @@ angular.module('treateaseApp')
     function get_all_questions() {
       $http.jsonp('http://www.drugabuse.gov/qm/get_all_questions?key=' + $scope.apiKey + '&callback=JSON_CALLBACK')
         .success(function (all_questions) {
-          console.log('get_all_questions', all_questions);
+          // console.log('get_all_questions', all_questions);
           $scope.questions = [];
           $scope.lastIndex = 1;
           if(all_questions.status == 1) {
@@ -59,36 +59,35 @@ angular.module('treateaseApp')
     $scope.answer = function (sq, optvalue, optId){
       sq.answer = optvalue;
       sq.answerId = optId;
-      console.log('QUESTIONS, $scope.questions[$rootScope.slideNumber]', $scope.questions, $scope.questions[$rootScope.slideNumber]);
-      _.each($scope.questions, function(question, q_index){
-        $scope.submitAnswer = {
-          "key": $scope.apiKey,
-          "token_id": $scope.token_id,
-          "question_id": q_index + 1,
-          "answers": [
-            {
-              "sub_question_id": "1",
-              // "option_id": $scope.questions[$rootScope.slideNumber].sub_questions[0].answerId
-            },{
-              "sub_question_id": "2",
-              // "option_id": $scope.questions[$rootScope.slideNumber].sub_questions[1].answerId
-            },{
-              "sub_question_id": "3",
-              // "option_id": $scope.questions[$rootScope.slideNumber].sub_questions[2].answerId
-            },{
-              "sub_question_id": "4",
-              // "option_id": $scope.questions[$rootScope.slideNumber].sub_questions[3].answerId
-            },{
-              "sub_question_id": "5",
-              // "option_id": $scope.questions[$rootScope.slideNumber].sub_questions[4].answerId
-            },
+      // console.log('QUESTIONS, $scope.questions[$rootScope.slideNumber]', $scope.questions, $scope.questions[$rootScope.slideNumber]);
+      // _.each($scope.questions, function(question, q_index){
+        // $scope.submitAnswer = {
+        //   "key": $scope.apiKey,
+        //   "token_id": $scope.token_id,
+        //   "question_id": q_index + 1,
+        //   "answers": [
+        //     {
+        //       "sub_question_id": "1",
+        //       // "option_id": $scope.questions[$rootScope.slideNumber].sub_questions[0].answerId
+        //     },{
+        //       "sub_question_id": "2",
+        //       // "option_id": $scope.questions[$rootScope.slideNumber].sub_questions[1].answerId
+        //     },{
+        //       "sub_question_id": "3",
+        //       // "option_id": $scope.questions[$rootScope.slideNumber].sub_questions[2].answerId
+        //     },{
+        //       "sub_question_id": "4",
+        //       // "option_id": $scope.questions[$rootScope.slideNumber].sub_questions[3].answerId
+        //     },{
+        //       "sub_question_id": "5",
+        //       // "option_id": $scope.questions[$rootScope.slideNumber].sub_questions[4].answerId
+        //     },
             
-          ]
-        };
+        //   ]
+        // };
 
-      })
+      // })
 
-      console.log($scope.submitAnswer);
 
 
 

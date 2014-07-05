@@ -9,38 +9,22 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="favicon.ico">
     
-    <!-- Google Fonts -->
-    <!-- <link href='http://fonts.googleapis.com/css?family=Ruda:400,900,700' rel='stylesheet' type='text/css'>   -->
-  
     <!-- Support for HTML5 -->
     <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <!-- Enable media queries on older browsers -->
-    <!--[if lt IE 9]>
-        <script src="assets/js/respond.min.js"></script>
-    <![endif]-->
-  
     
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="css/font-awesome.css">
-    <!-- Bootstrap -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <!-- Template Styles -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/colors/brown.css">    
-    <!-- Layer Slider -->
-    <link rel="stylesheet" href="layerslider/css/layerslider.css" type="text/css">
-     
-     <link rel="stylesheet" href="css/quiz-style.css">
-
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
     <!--STYLES-->
-    
+    <link rel="prefetch stylesheet" href="/css/font-awesome.css">
+    <link rel="prefetch stylesheet" href="/css/bootstrap.css">
+    <link rel="prefetch stylesheet" href="/css/style.css">
+    <link rel="prefetch stylesheet" href="/css/colors/brown.css">
+    <link rel="prefetch stylesheet" href="/layerslider/css/layerslider.css">
+    <link rel="prefetch stylesheet" href="/css/quiz-style.css">
     <!--STYLES END-->
-    <script src="js/modernizr.js"></script>
+   <script src="js/modernizr.js"></script>
   </head>
 
   <body ng-app="treateaseApp">
@@ -131,28 +115,20 @@
             </div><!-- site header -->
       </div><!-- end container -->
     </header><!-- end header -->
-  
-
-
     <%- body %>
-    
 
-
-    
-
-    
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/jquery.unveilEffects.js"></script>   
-    <script src="js/retina-1.1.0.js"></script>
-    <script src="js/jquery.hoverdir.js"></script>
-    <script src="js/owl.carousel.js"></script>  
-    <script src="js/jetmenu.js"></script>   
-    <script src="js/jquery.hoverex.min.js"></script>
-    <script src="js/jquery.prettyPhoto.js"></script>
-    <script src="js/jquery.isotope.min.js"></script>
-    <script src="js/custom.js"></script>
     <!--SCRIPTS-->
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.unveilEffects.js"></script>
+    <script src="/js/retina-1.1.0.js"></script>
+    <script src="/js/jquery.hoverdir.js"></script>
+    <script src="/js/owl.carousel.js"></script>
+    <script src="/js/jetmenu.js"></script>
+    <script src="/js/jquery.hoverex.min.js"></script>
+    <script src="/js/jquery.prettyPhoto.js"></script>
+    <script src="/js/jquery.isotope.min.js"></script>
+    <script src="/js/custom.js"></script>
     <script src="/linker/js/socket.io.js"></script>
     <script src="/linker/js/sails.io.js"></script>
     <script src="/linker/js/app.js"></script>
@@ -170,18 +146,11 @@
     <script src="/linker/js/app/directives/owl-carousel.js"></script>
     <script src="/linker/js/routingConfig.js"></script>
     <!--SCRIPTS END-->
+    
+   
+
     <script>
-        // $(document).ready(function() {
-        // });
-
-
-        $(document).ready(function() {
-            // $("#popularitems").owlCarousel({
-            //     items : 3,
-            //     lazyLoad : true,
-            //     navigation : false
-            // });
- 
+        $(document).ready(function() { 
             $("#owl-demo").owlCarousel(
             {
 
@@ -190,26 +159,9 @@
               paginationSpeed  : 400,
               singleItem       : true
 
-              // "singleItem:true" is a shortcut for:
-              // items : 1, 
-              // itemsDesktop : false,
-              // itemsDesktopSmall : false,
-              // itemsTablet: false,
-              // itemsMobile : false
-
-            }
-            );
-         
+            });
         });
     </script>
-    
-
-
-
-
-    
-
-    
 
     <!-- Google Analytics -->
     <script>
